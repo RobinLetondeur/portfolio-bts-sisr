@@ -12,6 +12,7 @@
             background-color: #e0f7fa;
             color: #333;
             text-align: center;
+            overflow-x: hidden;
         }
         header {
             background-color: #00796b;
@@ -21,6 +22,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            animation: fadeIn 1s ease-in-out;
         }
         nav {
             position: absolute;
@@ -50,6 +52,7 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             margin-bottom: 20px;
+            animation: slideUp 1s ease-out;
         }
         footer {
             background-color: #00796b;
@@ -75,6 +78,8 @@
             margin: 20px auto;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
             width: 80%;
+            opacity: 0;
+            animation: fadeInUp 1.5s forwards;
         }
         .profil h2 {
             font-size: 28px;
@@ -92,10 +97,10 @@
         }
         .profil ul li {
             margin-bottom: 10px;
-            list-style-type: none; /* Supprime les puces par défaut */
+            list-style-type: none;
         }
         .profil ul li:before {
-            content: "•"; /* Ajoute le point d'annotation */
+            content: "•";
             margin-right: 10px;
         }
         .diplome {
@@ -106,6 +111,8 @@
             margin: 20px auto;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
             width: 80%;
+            opacity: 0;
+            animation: fadeInUp 1.5s 0.5s forwards;
         }
         .diplome h2 {
             font-size: 28px;
@@ -123,6 +130,8 @@
             margin: 20px auto;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
             width: 80%;
+            opacity: 0;
+            animation: fadeInUp 1.5s 1s forwards;
         }
         .plus-info h2 {
             font-size: 28px;
@@ -144,6 +153,42 @@
         }
         .plus-info a:hover {
             background-color: #004d40;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(50px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Style pour enlever les puces de la liste */
+        .no-bullets {
+            list-style-type: none;
+            padding-left: 0;
         }
     </style>
 </head>
@@ -176,21 +221,14 @@
 
         <!-- Nouvelle section Diplôme -->
         <div class="diplome">
-    <h2>DIPLÔME</h2>
-    <p><strong>ACQUIS / EN COURS</strong></p>
-    <ul class="no-bullets">
-        <li>Brevet des collèges / College Pierre Brossolette</li>
-        <li>Bac Technologique STMG option RHC</li>
-    </ul>
-</div>
+            <h2>DIPLÔME</h2>
+            <p><strong>ACQUIS / EN COURS</strong></p>
+            <ul class="no-bullets">
+                <li>Brevet des collèges / College Pierre Brossolette</li>
+                <li>Bac Technologique STMG option RHC</li>
+            </ul>
+        </div>
 
-<style>
-    /* Style pour enlever les puces de la liste */
-    .no-bullets {
-        list-style-type: none;
-        padding-left: 0;
-    }
-</style>
         <!-- Nouvelle section Plus d'Informations -->
         <div class="plus-info">
             <h2>PLUS D’INFORMATIONS</h2>
