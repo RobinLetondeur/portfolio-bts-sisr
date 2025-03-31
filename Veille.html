@@ -12,6 +12,7 @@
             background-color: #e0f7fa;
             color: #333;
             text-align: center;
+            overflow-x: hidden;
         }
         header {
             background-color: #00796b;
@@ -21,6 +22,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            animation: fadeIn 1s ease-in-out;
         }
         nav {
             position: absolute;
@@ -50,6 +52,7 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             margin-bottom: 20px;
+            animation: slideUp 1s ease-out;
         }
         footer {
             background-color: #00796b;
@@ -83,23 +86,57 @@
             text-decoration: none;
             border-radius: 5px;
             font-size: 16px;
+            transition: transform 0.3s ease;
         }
         .btn-container a:hover {
             background-color: #004d40;
+            transform: scale(1.1);
         }
 
         /* Nouveau style pour les boutons supplémentaires */
         .btn-container-second a {
             margin: 10px;
             padding: 10px 20px;
-            background-color: #00796b;  /* Couleur verte claire, comme pour les premiers boutons */
+            background-color: #00796b;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             font-size: 16px;
+            transition: transform 0.3s ease;
         }
         .btn-container-second a:hover {
-            background-color: #004d40;  /* Couleur au survol (vert foncé) */
+            background-color: #004d40;
+            transform: scale(1.1);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(50px);
+            }
+            100% {
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -114,13 +151,13 @@
         </nav>
     </header>
 
-    <section class="container">
+    <section class="container" style="animation-delay: 0.5s;">
         <h2>Le rôle de l'intelligence artificielle dans la cybersécurité</h2>
         <p>L’intelligence artificielle (IA) joue un rôle crucial dans la cybersécurité moderne. Elle permet une détection rapide des menaces, une analyse en temps réel des comportements suspects et une réaction instantanée face aux attaques. Grâce à l'IA, il est possible de surveiller et protéger des systèmes à grande échelle tout en optimisant les processus et les ressources.</p>
         <p>Les solutions basées sur l'IA apportent de nombreux avantages, comme la détection de nouvelles menaces et la prévention des attaques complexes, souvent plus difficiles à repérer pour les méthodes traditionnelles. Avec une surveillance et une gestion proactives, l'IA devient un outil indispensable dans la protection des infrastructures critiques des entreprises.</p>
 
         <!-- Hyperliens -->
-        <div class="btn-container">
+        <div class="btn-container" style="animation-delay: 1s;">
             <a href="https://www.lemondeinformatique.fr/reseaux-197.html" target="_blank">Sécurité Réseaux</a>
             <a href="https://www.lemondeinformatique.fr/firewall-194.html" target="_blank">Firewall</a>
             <a href="https://www.lemondeinformatique.fr/phishing-37.html" target="_blank">Phishing</a>
@@ -130,7 +167,7 @@
     </section>
 
     <!-- Nouvelle section avec des boutons cliquables -->
-    <section class="container">
+    <section class="container" style="animation-delay: 1.5s;">
         <h2>Sites recommandés</h2>
         <div class="btn-container-second">
             <a href="https://www.journaldunet.com/" target="_blank">Journal du Net</a>
