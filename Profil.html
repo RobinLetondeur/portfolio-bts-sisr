@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - Portfolio BTS SISR</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+            color: #333;
+            text-align: center;
+        }
+        header {
+            background-color: #00796b;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #004d40;
+        }
+        section {
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #00796b;
+            color: white;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .profil {
+            background-color: #004d40;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px auto;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            width: 80%;
+        }
+        .profil h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .profil p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .profil ul {
+            text-align: left;
+            font-size: 18px;
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+        .profil ul li {
+            margin-bottom: 10px;
+            list-style-type: none; /* Supprime les puces par défaut */
+        }
+        .profil ul li:before {
+            content: "•"; /* Ajoute le point d'annotation */
+            margin-right: 10px;
+        }
+        .diplome {
+            background-color: #00796b;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px auto;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            width: 80%;
+        }
+        .diplome h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .diplome p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .plus-info {
+            background-color: #004d40;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px auto;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            width: 80%;
+        }
+        .plus-info h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .plus-info p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .plus-info a {
+            color: #ffeb3b;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 10px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #00796b;
+            transition: background-color 0.3s ease;
+        }
+        .plus-info a:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>Robin LETONDEUR</div>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="profil.html">Profil</a>
+            <a href="projets.html">Projets</a>
+            <a href="veille.html">Veille informatique</a>
+        </nav>
+    </header>
+
+    <section class="container">
+        <div class="profil">
+            <h2>SYSTÈME & RÉSEAU</h2>
+            <p>J’exerce en tant qu’alternant technicien système et réseau depuis Avril 2021. Voici une liste de missions que j’ai pu effectuer :</p>
+            <ul>
+                <li>Montage et installation d’un poste informatique</li>
+                <li>Installation et configuration d’un NAS</li>
+                <li>Installation et configuration d’imprimante</li>
+                <li>Configuration et installation d’un firewall Pfsense</li>
+                <li>Configuration et gestion des mails Office 365 (tenant)</li>
+                <li>Configuration et gestion de SharePoint Office 365</li>
+                <li>Configuration et maintenance de Windows Server</li>
+                <li>Gestion du parc informatique avec installation de matériels et prise à distance ou intervention sur site pour régler les différents problèmes</li>
+            </ul>
+        </div>
+
+        <!-- Nouvelle section Diplôme -->
+        <div class="diplome">
+            <h2>DIPLÔME</h2>
+            <p><strong>ACQUIS / EN COURS</strong></p>
+            <ul>
+                <li>Brevet des collèges / ALAIN SAVARY 31620 (2017-2018)</li>
+                <li>Bac Professionnel SN option RISC / CFAI 31700 (2020-2022)</li>
+                <li>Brevet Technicien Supérieur SIO / CFAI 31700 (2022-2024)</li>
+            </ul>
+        </div>
+
+        <!-- Nouvelle section Plus d'Informations -->
+        <div class="plus-info">
+            <h2>PLUS D’INFORMATIONS</h2>
+            <p>CV / LINKEDIN</p>
+            <p>Ci-dessous vous trouverez mon CV et mon compte LinkedIn :</p>
+            <div>
+                <a href="chemin/vers/ton/cv.pdf" target="_blank">Télécharger mon CV</a>
+                <a href="https://www.linkedin.com/in/ton-profil-linkedin" target="_blank">Voir mon profil LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2024 - Mon Portfolio BTS SISR | <a href="#">Mentions légales</a>
+    </footer>
+</body>
+</html>
