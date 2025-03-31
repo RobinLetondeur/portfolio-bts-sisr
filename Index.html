@@ -6,7 +6,7 @@
     <title>Robin LETONDEUR - Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #e0f7fa;
@@ -142,6 +142,10 @@
             transform: scale(1.1); /* Button zoom effect */
         }
 
+        .btn-profile:focus {
+            outline: 2px solid #004d40;
+        }
+
         @keyframes fadeIn {
             0% {
                 opacity: 0;
@@ -159,6 +163,29 @@
                 transform: translateY(0);
             }
         }
+
+        /* Media Queries for mobile responsiveness */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                position: static;
+                margin-top: 10px;
+            }
+
+            .welcome, .intro {
+                width: 100%;
+                padding: 15px;
+            }
+
+            .btn-profile {
+                width: 100%;
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -172,24 +199,26 @@
         </nav>
     </header>
 
-    <section class="container">
-        <!-- Section Bienvenue -->
-        <div class="welcome">
-            <h2>Bienvenue sur mon Portfolio</h2>
-            <p>Vous trouverez l'ensemble des différentes réalisations que j'ai pu effectuer durant mes années de BTS SIO – OPTION SISR</p>
-            <a href="profil.html">
-                <button class="btn-profile">Voir mon Profil</button>
-            </a>
-        </div>
+    <main>
+        <section class="container">
+            <!-- Section Bienvenue -->
+            <div class="welcome">
+                <h2>Bienvenue sur mon Portfolio</h2>
+                <p>Vous trouverez l'ensemble des différentes réalisations que j'ai pu effectuer durant mes années de BTS SIO – OPTION SISR</p>
+                <a href="profil.html">
+                    <button class="btn-profile">Voir mon Profil</button>
+                </a>
+            </div>
 
-        <!-- Section BTS SIO SISR -->
-        <div class="intro">
-            <h2>BTS SIO SISR</h2>
-            <p>La spécialisation SISR du BTS SIO vise à former des futurs Administrateurs Systèmes et Réseaux avec la conception, l’installation, la configuration, la gestion d’équipements réseaux et la maintenance de parcs informatiques, tout en ayant un œil du côté de la cybersécurité.</p>
-            <p>Le titulaire du diplôme participe à la production et à la fourniture de services en réalisant ou en adaptant des solutions d’infrastructures et en assurant le fonctionnement optimal des équipements.</p>
-        </div>
+            <!-- Section BTS SIO SISR -->
+            <div class="intro">
+                <h2>BTS SIO SISR</h2>
+                <p>La spécialisation SISR du BTS SIO vise à former des futurs Administrateurs Systèmes et Réseaux avec la conception, l’installation, la configuration, la gestion d’équipements réseaux et la maintenance de parcs informatiques, tout en ayant un œil du côté de la cybersécurité.</p>
+                <p>Le titulaire du diplôme participe à la production et à la fourniture de services en réalisant ou en adaptant des solutions d’infrastructures et en assurant le fonctionnement optimal des équipements.</p>
+            </div>
 
-    </section>
+        </section>
+    </main>
 
     <footer>
         &copy; 2024 - Robin LETONDEUR | <a href="#">Mentions légales</a>
