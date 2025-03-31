@@ -12,6 +12,7 @@
             background-color: #e0f7fa;
             color: #333;
             text-align: center;
+            overflow-x: hidden;
         }
         header {
             background-color: #00796b;
@@ -21,6 +22,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            animation: fadeIn 1s ease-in-out;
         }
         nav {
             position: absolute;
@@ -50,6 +52,7 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             margin-bottom: 20px;
+            animation: slideUp 1s ease-out;
         }
         footer {
             background-color: #00796b;
@@ -74,6 +77,8 @@
             border-radius: 10px;
             margin: 20px 0;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            opacity: 0;
+            animation: fadeInUp 1.5s forwards;
         }
         .projet h3 {
             font-size: 24px;
@@ -82,6 +87,36 @@
         .projet p {
             font-size: 18px;
             line-height: 1.6;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(50px);
+            }
+            100% {
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -98,11 +133,11 @@
     
     <section class="container">
         <h2>Mes Projets</h2>
-        <div class="projet">
+        <div class="projet" style="animation-delay: 0.5s;">
             <h3>Mise en place d'un Active Directory sous Windows Serveur 2022</h3>
             <p>Ce projet consistait à mettre en place un serveur Active Directory sur Windows Serveur 2022, en configurant les utilisateurs, groupes, et les stratégies de sécurité pour une gestion centralisée des ressources et de l'accès dans l'entreprise.</p>
         </div>
-        <div class="projet">
+        <div class="projet" style="animation-delay: 1s;">
             <h3>Mise en place d'un outil de ticketing GLPI sous Linux</h3>
             <p>Dans ce projet, j'ai installé et configuré l'outil GLPI sur une machine Linux pour la gestion des incidents et des demandes d'assistance. Le système a été configuré pour suivre les tickets, les affectations, et les résolutions en temps réel.</p>
         </div>
