@@ -23,6 +23,7 @@
             justify-content: space-between;
             align-items: center;
             animation: fadeIn 1s ease-in-out;
+            position: relative; /* Ajout pour le positionnement relatif de la nav */
         }
         nav {
             position: absolute;
@@ -52,7 +53,7 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             margin-bottom: 20px;
-            animation: slideUp 1s ease-out;
+            animation: slideUp 1s ease-out; /* L'animation est déjà appliquée ici */
         }
         footer {
             background-color: #00796b;
@@ -113,9 +114,11 @@
         @keyframes slideUp {
             0% {
                 transform: translateY(50px);
+                opacity: 0; /* Ajout d'opacité pour l'effet de fondu */
             }
             100% {
                 transform: translateY(0);
+                opacity: 1;
             }
         }
 
@@ -130,6 +133,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             line-height: 1.6;
             animation: fadeIn 1s ease-in-out;
+            animation-delay: 0.2s; /* Ajout d'un léger délai pour l'introduction */
         }
     </style>
 </head>
@@ -143,11 +147,10 @@
             <a href="veille.html">Veille informatique</a>
         </nav>
     </header>
-    
+
     <section class="container">
         <h2>Mes Projets</h2>
-        
-        <!-- Added Introduction Text -->
+
         <div class="intro-text">
             <h3>LES PROJETS / EPREUVES BTS SIO SISR</h3>
             <p>Durant mes 2 années BTS SIO, j’ai pu réaliser plusieurs projets / épreuves que vous pourrez retrouver ci-dessous.</p>
@@ -165,7 +168,7 @@
     </section>
 
     <footer>
-        &copy; 2024 - Mon Portfolio BTS SISR | <a href="#">Mentions légales</a>
+        &copy; 2024 - 2025 - Mon Portfolio BTS SISR | <a href="#">Mentions légales</a>
     </footer>
 </body>
 </html>
