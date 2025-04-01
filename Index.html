@@ -154,45 +154,4 @@
         <section class="container" id="accueil">
             <div class="welcome">
                 <h2>Bienvenue sur mon Portfolio</h2>
-                <p>Vous trouverez l'ensemble des différentes réalisations que j'ai pu effectuer durant mes années de BTS SIO – OPTION SISR</p>
-                <a href="#profil">
-                    <button class="btn-profile">Voir mon Profil</button>
-                </a>
-            </div>
-        </section>
-
-        <section class="container" id="profil">
-            <div class="intro">
-                <h2>BTS SIO SISR</h2>
-                <p>La spécialisation SISR du BTS SIO vise à former des futurs Administrateurs Systèmes et Réseaux...</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <h3>Mentions Légales</h3>
-            <p>Vous pourrez retrouver ci-dessous la politique de confidentialité ainsi que le copyright.</p>
-            <h3>À propos de ce site</h3>
-            <p>Réalisation du site pour tester mes compétences acquises durant mes deux années de formations.</p>
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="Rechercher...">
-                <button onclick="searchSection()">Rechercher</button>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        function searchSection() {
-            let query = document.getElementById('search-input').value.toLowerCase();
-            let sections = { "accueil": "#accueil", "profil": "#profil", "projets": "#projets", "veille": "#veille" };
-            
-            if (sections[query]) {
-                window.location.href = sections[query];
-            } else {
-                alert('Section non trouvée. Essayez : Accueil, Profil, Projets, Veille');
-            }
-        }
-    </script>
-</body>
-</html>
+                <p>Vous trouverez l'ensemble des différentes réalisations que j'ai pu effectuer durant mes années de BTS SIO –
