@@ -143,23 +143,25 @@
     <header>
         <div>Robin LETONDEUR</div>
         <nav>
-            <a href="index.html">Accueil</a>
-            <a href="profil.html">Profil</a>
-            <a href="projets.html">Projets</a>
-            <a href="veille.html">Veille informatique</a>
+            <a href="#accueil">Accueil</a>
+            <a href="#profil">Profil</a>
+            <a href="#projets">Projets</a>
+            <a href="#veille">Veille informatique</a>
         </nav>
     </header>
 
     <main>
-        <section class="container">
+        <section class="container" id="accueil">
             <div class="welcome">
                 <h2>Bienvenue sur mon Portfolio</h2>
                 <p>Vous trouverez l'ensemble des différentes réalisations que j'ai pu effectuer durant mes années de BTS SIO – OPTION SISR</p>
-                <a href="profil.html">
+                <a href="#profil">
                     <button class="btn-profile">Voir mon Profil</button>
                 </a>
             </div>
+        </section>
 
+        <section class="container" id="profil">
             <div class="intro">
                 <h2>BTS SIO SISR</h2>
                 <p>La spécialisation SISR du BTS SIO vise à former des futurs Administrateurs Systèmes et Réseaux...</p>
@@ -174,21 +176,23 @@
             <h3>À propos de ce site</h3>
             <p>Réalisation du site pour tester mes compétences acquises durant mes deux années de formations.</p>
             <div class="search-container">
-                <input type="text" placeholder="Rechercher...">
-                <button>Rechercher</button>
+                <input type="text" id="search-input" placeholder="Rechercher...">
+                <button onclick="searchSection()">Rechercher</button>
             </div>
         </div>
     </footer>
 
     <script>
-        document.querySelector('.search-container button').addEventListener('click', function() {
-            let query = document.querySelector('.search-container input').value;
-            if (query) {
-                alert('Vous avez recherché : ' + query);
+        function searchSection() {
+            let query = document.getElementById('search-input').value.toLowerCase();
+            let sections = { "accueil": "#accueil", "profil": "#profil", "projets": "#projets", "veille": "#veille" };
+            
+            if (sections[query]) {
+                window.location.href = sections[query];
             } else {
-                alert('Veuillez entrer un terme de recherche.');
+                alert('Section non trouvée. Essayez : Accueil, Profil, Projets, Veille');
             }
-        });
+        }
     </script>
 </body>
 </html>
