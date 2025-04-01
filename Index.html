@@ -9,14 +9,15 @@
             font-family: Arial, Helvetica, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e0f7fa;
+            background: url('giphy.gif') no-repeat center center fixed;
+            background-size: cover;
             color: #333;
             text-align: center;
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-x: hidden;
         }
 
         header {
-            background-color: #00796b;
+            background-color: rgba(0, 121, 107, 0.9);
             color: white;
             padding: 20px;
             font-size: 24px;
@@ -44,17 +45,13 @@
 
         nav a:hover {
             background-color: #004d40;
-            transform: translateY(-5px); /* Small hover lift effect */
-        }
-
-        section {
-            padding: 20px;
+            transform: translateY(-5px);
         }
 
         .container {
             max-width: 800px;
             margin: auto;
-            background: white;
+            background: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -63,27 +60,16 @@
         }
 
         footer {
-            background-color: #00796b;
+            background-color: rgba(0, 121, 107, 0.9);
             color: white;
             padding: 10px;
-            position: relative;
-            bottom: 0;
             width: 100%;
             margin-top: 20px;
             animation: fadeIn 1.5s ease-in-out;
         }
 
-        footer a {
-            color: white;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        .intro {
-            background-color: #004d40;
+        .welcome, .intro {
+            background-color: rgba(0, 77, 64, 0.9);
             color: white;
             padding: 30px;
             border-radius: 10px;
@@ -92,38 +78,6 @@
             width: 80%;
             opacity: 0;
             animation: fadeIn 1.5s forwards;
-        }
-
-        .intro h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        .intro p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-
-        .welcome {
-            background-color: #00796b;
-            color: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            margin: 20px auto;
-            opacity: 0;
-            animation: fadeIn 1s forwards, slideUp 1s ease-out;
-        }
-
-        .welcome h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-
-        .welcome p {
-            font-size: 20px;
-            margin-bottom: 20px;
         }
 
         .btn-profile {
@@ -139,52 +93,17 @@
 
         .btn-profile:hover {
             background-color: #00332e;
-            transform: scale(1.1); /* Button zoom effect */
-        }
-
-        .btn-profile:focus {
-            outline: 2px solid #004d40;
+            transform: scale(1.1);
         }
 
         @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
 
         @keyframes slideUp {
-            0% {
-                transform: translateY(50px);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
-
-        /* Media Queries for mobile responsiveness */
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            nav {
-                position: static;
-                margin-top: 10px;
-            }
-
-            .welcome, .intro {
-                width: 100%;
-                padding: 15px;
-            }
-
-            .btn-profile {
-                width: 100%;
-                padding: 10px;
-            }
+            0% { transform: translateY(50px); }
+            100% { transform: translateY(0); }
         }
     </style>
 </head>
@@ -201,7 +120,6 @@
 
     <main>
         <section class="container">
-            <!-- Section Bienvenue -->
             <div class="welcome">
                 <h2>Bienvenue sur mon Portfolio</h2>
                 <p>Vous trouverez l'ensemble des différentes réalisations que j'ai pu effectuer durant mes années de BTS SIO – OPTION SISR</p>
@@ -210,13 +128,11 @@
                 </a>
             </div>
 
-            <!-- Section BTS SIO SISR -->
             <div class="intro">
                 <h2>BTS SIO SISR</h2>
                 <p>La spécialisation SISR du BTS SIO vise à former des futurs Administrateurs Systèmes et Réseaux avec la conception, l’installation, la configuration, la gestion d’équipements réseaux et la maintenance de parcs informatiques, tout en ayant un œil du côté de la cybersécurité.</p>
                 <p>Le titulaire du diplôme participe à la production et à la fourniture de services en réalisant ou en adaptant des solutions d’infrastructures et en assurant le fonctionnement optimal des équipements.</p>
             </div>
-
         </section>
     </main>
 
