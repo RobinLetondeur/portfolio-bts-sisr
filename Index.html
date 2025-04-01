@@ -179,5 +179,16 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.querySelector('.search-container button').addEventListener('click', function() {
+            let query = document.querySelector('.search-container input').value;
+            if (query) {
+                alert('Vous avez recherché : ' + query);
+            } else {
+                alert('Veuillez entrer un terme de recherche.');
+            }
+        });
+    </script>
 </body>
 </html>
