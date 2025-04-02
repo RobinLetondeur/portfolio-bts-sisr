@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robin LETONDEUR | Portfolio BTS SIO option SISR</title>
-      <!-- Favicon SISR personnalisé -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230055A4'/><circle cx='50' cy='50' r='40' fill='%23E5007D'/><path d='M30,30 L70,30 L70,70 L30,70 Z' stroke='white' stroke-width='5' fill='none'/><circle cx='50' cy='50' r='15' fill='white'/><path d='M50,30 L50,15 M50,70 L50,85 M30,50 L15,50 M70,50 L85,50' stroke='white' stroke-width='4'/></svg>">
+    <!-- Favicon personnalisé -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23212A3E'/><circle cx='50' cy='50' r='40' fill='%234A6FA5'/><path d='M30,30 L70,30 L70,70 L30,70 Z' stroke='white' stroke-width='5' fill='none'/><circle cx='50' cy='50' r='15' fill='white'/><path d='M50,30 L50,15 M50,70 L50,85 M30,50 L15,50 M70,50 L85,50' stroke='white' stroke-width='4'/></svg>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #FFD1DC; /* Rose Eden Park */
-            --primary-dark: #B20062;
-            --primary-light: #FF4DA6;
-            --secondary: #003366; /* Bleu Eden Park */
-            --accent: #ffab40;
-            --text: #eceff1;
-            --bg-dark: #121212;
-            --card-bg: rgba(30, 30, 30, 0.9);
+            --primary: #4A6FA5; /* Bleu doux */
+            --primary-dark: #3A5A8A;
+            --primary-light: #6B8FC7;
+            --secondary: #212A3E; /* Bleu foncé */
+            --accent: #FF7E5F; /* Corail */
+            --text: #F8F9FA; /* Blanc cassé */
+            --bg-dark: #1A1E2C; /* Fond sombre */
+            --card-bg: rgba(33, 42, 62, 0.9);
         }
 
         * {
@@ -27,11 +27,14 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-           background: #003366; /* Bleu marine */
-    color: var(--text);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
+            background: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(74, 111, 165, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255, 126, 95, 0.15) 0%, transparent 50%);
+        }
 
         /* Scrollbar personnalisée */
         ::-webkit-scrollbar {
@@ -50,7 +53,7 @@
 
         /* Header */
         header {
-            background: rgba(22, 22, 22, 0.95);
+            background: rgba(33, 42, 62, 0.95);
             backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
@@ -61,7 +64,7 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-            border-bottom: 1px solid rgba(229, 0, 125, 0.2);
+            border-bottom: 1px solid rgba(74, 111, 165, 0.2);
             transform: translateY(0);
             transition: transform 0.3s ease, background 0.3s ease;
         }
@@ -191,13 +194,13 @@
         .btn-primary {
             background: var(--primary);
             color: white;
-            box-shadow: 0 4px 15px rgba(229, 0, 125, 0.3);
+            box-shadow: 0 4px 15px rgba(74, 111, 165, 0.3);
         }
 
         .btn-primary:hover {
             background: var(--primary-light);
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(229, 0, 125, 0.4);
+            box-shadow: 0 6px 20px rgba(74, 111, 165, 0.4);
         }
 
         .btn-secondary {
@@ -207,7 +210,7 @@
         }
 
         .btn-secondary:hover {
-            background: rgba(229, 0, 125, 0.1);
+            background: rgba(74, 111, 165, 0.1);
             transform: translateY(-3px);
         }
 
@@ -316,12 +319,12 @@
         }
 
         .skill-tag {
-            background: rgba(229, 0, 125, 0.2);
+            background: rgba(74, 111, 165, 0.2);
             color: var(--primary-light);
             padding: 0.3rem 1rem;
             border-radius: 50px;
             font-size: 0.9rem;
-            border: 1px solid rgba(229, 0, 125, 0.3);
+            border: 1px solid rgba(74, 111, 165, 0.3);
         }
 
         /* Section Projets */
@@ -342,8 +345,8 @@
 
         .project-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(229, 0, 125, 0.2);
-            border: 1px solid rgba(229, 0, 125, 0.3);
+            box-shadow: 0 15px 40px rgba(74, 111, 165, 0.2);
+            border: 1px solid rgba(74, 111, 165, 0.3);
         }
 
         .project-image {
@@ -386,7 +389,7 @@
         }
 
         .project-tag {
-            background: rgba(229, 0, 125, 0.1);
+            background: rgba(74, 111, 165, 0.1);
             color: var(--primary-light);
             padding: 0.2rem 0.8rem;
             border-radius: 50px;
@@ -529,7 +532,7 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: rgba(229, 0, 125, 0.1);
+            background: rgba(74, 111, 165, 0.1);
             color: var(--primary);
             transition: all 0.3s ease;
         }
@@ -595,15 +598,15 @@
         .submit-btn:hover {
             background: var(--primary-light);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(229, 0, 125, 0.3);
+            box-shadow: 0 5px 15px rgba(74, 111, 165, 0.3);
         }
 
         /* Footer */
         footer {
-            background: rgba(22, 22, 22, 0.95);
+            background: rgba(33, 42, 62, 0.95);
             padding: 3rem 5%;
             text-align: center;
-            border-top: 1px solid rgba(229, 0, 125, 0.2);
+            border-top: 1px solid rgba(74, 111, 165, 0.2);
         }
 
         .footer-content {
@@ -1057,7 +1060,7 @@
                     
                     <div class="form-group">
                         <label for="message">Message</label>
-                       <textarea id="message" class="form-control" required></textarea>
+                        <textarea id="message" class="form-control" required></textarea>
                     </div>
                     
                     <button type="submit" class="submit-btn">
