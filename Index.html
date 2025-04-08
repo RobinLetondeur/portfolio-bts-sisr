@@ -323,7 +323,7 @@
             height: auto;
             display: block;
             transition: transform 0.5s ease;
-        }
+}
 
         .about-image:hover img {
             transform: scale(1.05);
@@ -690,6 +690,194 @@
             font-size: 0.9rem;
         }
 
+        /* Modale de projet */
+        .project-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .project-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            border-radius: 15px;
+            width: 90%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .project-modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            color: var(--text);
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: var(--accent);
+        }
+
+        .modal-header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .modal-header h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-header .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .modal-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .modal-images {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .modal-images img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-images img:hover {
+            transform: scale(1.02);
+        }
+
+        .modal-details h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .modal-details p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .modal-features {
+            margin-bottom: 2rem;
+        }
+
+        .modal-features h4 {
+            color: var(--primary-light);
+            margin-bottom: 0.8rem;
+        }
+
+        .modal-features ul {
+            list-style-type: none;
+        }
+
+        .modal-features li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .modal-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .modal-technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .modal-tech-tag {
+            background: rgba(74, 111, 165, 0.2);
+            color: var(--primary-light);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(74, 111, 165, 0.3);
+        }
+
+        .modal-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .modal-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .modal-links a:first-child {
+            background: var(--primary);
+            color: white;
+        }
+
+        .modal-links a:first-child:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+        }
+
+        .modal-links a:last-child {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .modal-links a:last-child:hover {
+            background: rgba(74, 111, 165, 0.1);
+            transform: translateY(-3px);
+        }
+
         /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -763,6 +951,18 @@
             .hero-btns {
                 justify-content: center;
             }
+
+            .modal-body {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-images {
+                order: 2;
+            }
+
+            .modal-details {
+                order: 1;
+            }
         }
 
         @media (max-width: 768px) {
@@ -804,6 +1004,10 @@
             .hero {
                 padding-top: 8rem;
             }
+
+            .modal-links {
+                flex-direction: column;
+            }
         }
 
         @media (max-width: 576px) {
@@ -819,6 +1023,14 @@
 
             section {
                 padding: 4rem 5%;
+            }
+
+            .modal-content {
+                padding: 1.5rem;
+            }
+
+            .modal-header h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -943,7 +1155,7 @@
                         <span class="project-tag"> ? </span>
                     </div>
                     <div class="project-links">
-                        <a href="#">
+                        <a href="#" class="view-project" data-project="1">
                             <i class="fas fa-external-link-alt"></i> Voir le projet
                         </a>
                         <a href="#">
@@ -968,7 +1180,7 @@
                         <span class="project-tag">?</span>
                     </div>
                     <div class="project-links">
-                        <a href="#">
+                        <a href="#" class="view-project" data-project="2">
                             <i class="fas fa-external-link-alt"></i> Voir le projet
                         </a>
                         <a href="#">
@@ -993,7 +1205,7 @@
                         <span class="project-tag">Firebase</span>
                     </div>
                     <div class="project-links">
-                        <a href="#">
+                        <a href="#" class="view-project" data-project="3">
                             <i class="fas fa-external-link-alt"></i> Voir le projet
                         </a>
                         <a href="#">
@@ -1153,6 +1365,166 @@
         </div>
     </footer>
 
+    <!-- Modales des projets -->
+    <!-- Modale Projet 1 -->
+    <div class="project-modal" id="project-modal-1">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h2>Création d'un Active Directory sous Windows Server 2022</h2>
+                <div class="project-meta">
+                    <span><i class="far fa-calendar-alt"></i> Janvier 2023</span>
+                    <span><i class="fas fa-tag"></i> Infrastructure réseau</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-images">
+                    <img src="ChatGPT Image 7 avr. 2025, 10_01_54.png" alt="Capture d'écran du projet">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Détails techniques">
+                </div>
+                <div class="modal-details">
+                    <h3>Description du projet</h3>
+                    <p>Ce projet consistait à mettre en place un Active Directory complet sous Windows Server 2022 pour une entreprise fictive de 50 employés. L'objectif était de centraliser la gestion des utilisateurs, des ordinateurs et des politiques de sécurité.</p>
+                    
+                    <div class="modal-features">
+                        <h4>Fonctionnalités implémentées</h4>
+                        <ul>
+                            <li>Création d'un domaine Active Directory avec DNS intégré</li>
+                            <li>Configuration des Unités Organisationnelles (OU) par services</li>
+                            <li>Mise en place des stratégies de groupe (GPO)</li>
+                            <li>Déploiement des profils itinérants</li>
+                            <li>Configuration des partages réseau et des permissions</li>
+                            <li>Automatisation des tâches avec PowerShell</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="modal-technologies">
+                        <span class="modal-tech-tag">Windows Server 2022</span>
+                        <span class="modal-tech-tag">Active Directory</span>
+                        <span class="modal-tech-tag">DNS</span>
+                        <span class="modal-tech-tag">GPO</span>
+                        <span class="modal-tech-tag">PowerShell</span>
+                    </div>
+                    
+                    <div class="modal-links">
+                        <a href="#" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Voir la documentation
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fab fa-github"></i> Voir les scripts
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale Projet 2 -->
+    <div class="project-modal" id="project-modal-2">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h2>Mise en place d'un outil de ticketing GLPI sous Linux</h2>
+                <div class="project-meta">
+                    <span><i class="far fa-calendar-alt"></i> Mars 2023</span>
+                    <span><i class="fas fa-tag"></i> Gestion de parc</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-images">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Capture d'écran du projet">
+                    <img src="https://images.unsplash.com/photo-1544197150-bc3f308a029a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Détails techniques">
+                </div>
+                <div class="modal-details">
+                    <h3>Description du projet</h3>
+                    <p>Implémentation d'une solution complète de ticketing et de gestion de parc informatique basée sur GLPI (Gestionnaire Libre de Parc Informatique) sous Linux CentOS. Le système permet de gérer les incidents, les demandes et l'inventaire du matériel.</p>
+                    
+                    <div class="modal-features">
+                        <h4>Fonctionnalités implémentées</h4>
+                        <ul>
+                            <li>Installation et configuration de GLPI avec MySQL</li>
+                            <li>Intégration avec FusionInventory pour la découverte réseau</li>
+                            <li>Configuration des workflows de tickets</li>
+                            <li>Mise en place des notifications par email</li>
+                            <li>Création de tableaux de bord personnalisés</li>
+                            <li>Automatisation des sauvegardes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="modal-technologies">
+                        <span class="modal-tech-tag">CentOS 8</span>
+                        <span class="modal-tech-tag">GLPI</span>
+                        <span class="modal-tech-tag">MySQL</span>
+                        <span class="modal-tech-tag">Apache</span>
+                        <span class="modal-tech-tag">PHP</span>
+                    </div>
+                    
+                    <div class="modal-links">
+                        <a href="#" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Voir la documentation
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fab fa-github"></i> Voir les scripts
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale Projet 3 -->
+    <div class="project-modal" id="project-modal-3">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h2>Application météo</h2>
+                <div class="project-meta">
+                    <span><i class="far fa-calendar-alt"></i> Mai 2023</span>
+                    <span><i class="fas fa-tag"></i> Développement mobile</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-images">
+                    <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Capture d'écran du projet">
+                    <img src="https://images.unsplash.com/photo-1603366615917-1fa6dad5c4fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Détails techniques">
+                </div>
+                <div class="modal-details">
+                    <h3>Description du projet</h3>
+                    <p>Application mobile développée avec Flutter permettant d'afficher les prévisions météorologiques en temps réel pour la localisation actuelle ou pour des villes recherchées. L'application intègre des données provenant d'une API météo et offre des fonctionnalités avancées de visualisation.</p>
+                    
+                    <div class="modal-features">
+                        <h4>Fonctionnalités implémentées</h4>
+                        <ul>
+                            <li>Géolocalisation pour obtenir la météo locale</li>
+                            <li>Recherche par ville avec autocomplétion</li>
+                            <li>Affichage des prévisions sur 5 jours</li>
+                            <li>Graphiques des températures et précipitations</li>
+                            <li>Mode sombre/nuit</li>
+                            <li>Notifications pour les alertes météo</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="modal-technologies">
+                        <span class="modal-tech-tag">Flutter</span>
+                        <span class="modal-tech-tag">Dart</span>
+                        <span class="modal-tech-tag">API REST</span>
+                        <span class="modal-tech-tag">Firebase</span>
+                        <span class="modal-tech-tag">Google Maps</span>
+                    </div>
+                    
+                    <div class="modal-links">
+                        <a href="#" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Voir l'application
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fab fa-github"></i> Code source
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Gestion du thème
         const themeToggle = document.getElementById('themeToggle');
@@ -1281,6 +1653,52 @@
                 // Ici vous pourriez ajouter le code pour envoyer le formulaire
                 alert('Message envoyé avec succès !');
                 contactForm.reset();
+            });
+
+            // Gestion des modales de projet
+            const viewProjectButtons = document.querySelectorAll('.view-project');
+            const projectModals = document.querySelectorAll('.project-modal');
+            const closeModalButtons = document.querySelectorAll('.close-modal');
+
+            // Ouvrir la modale correspondante
+            viewProjectButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const projectId = this.getAttribute('data-project');
+                    const modal = document.getElementById(`project-modal-${projectId}`);
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Fermer la modale
+            closeModalButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.closest('.project-modal').classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+
+            // Fermer la modale en cliquant à l'extérieur
+            projectModals.forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+
+            // Fermer la modale avec la touche ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    projectModals.forEach(modal => {
+                        if (modal.classList.contains('active')) {
+                            modal.classList.remove('active');
+                            document.body.style.overflow = 'auto';
+                        }
+                    });
+                }
             });
         });
     </script>
