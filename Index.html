@@ -183,6 +183,34 @@
             background: rgba(74, 111, 165, 0.1);
         }
 
+        /* Certification Badge */
+        .certification-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(74, 111, 165, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            margin-right: 1rem;
+            border: 1px solid rgba(74, 111, 165, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .certification-badge:hover {
+            background: rgba(74, 111, 165, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .certification-badge i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .certification-badge span {
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -322,8 +350,7 @@
             width: 100%;
             height: auto;
             display: block;
-            transition: transform 0.5s ease;
-}
+            transition: transform 0.5s ease; }
 
         .about-image:hover img {
             transform: scale(1.05);
@@ -468,7 +495,7 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-        }
+}
 
         .veille-content {
             background: var(--card-bg);
@@ -886,11 +913,11 @@
 
         @keyframes slideUp {
             from { 
-                opacity: 0;
+                 opacity: 0;
                 transform: translateY(50px);
             }
             to { 
-                opacity: 1;
+                 opacity: 1;
                 transform: translateY(0);
             }
         }
@@ -1008,6 +1035,10 @@
             .modal-links {
                 flex-direction: column;
             }
+
+            .certification-badge {
+                display: none;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1053,6 +1084,10 @@
                 <a href="#projets">Projets</a>
                 <a href="#veille">Veille techno</a>
                 <a href="#contact">Contact</a>
+            </div>
+            <div class="certification-badge">
+                <i class="fas fa-certificate"></i>
+                <span>BTS SIO SISR</span>
             </div>
             <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
                 <i class="fas fa-moon"></i>
@@ -1147,7 +1182,7 @@
                 </div>
                 <div class="project-info">
                     <h3>Création d'un Active Directory sous Windows Server 2022</h3>
-                    <p>Mise en place d’un Active Directory sous Windows Server 2022. Pour répondre à ce besoin, je mets en place d’un contrôleur de domaine avec les services AD-DS, DNS, GPO, DHCP afin de centraliser les utilisateurs et les ressources informatiques.</p>
+                    <p>Mise en place d'un Active Directory sous Windows Server 2022. Pour répondre à ce besoin, je mets en place d'un contrôleur de domaine avec les services AD-DS, DNS, GPO, DHCP afin de centraliser les utilisateurs et les ressources informatiques.</p>
                     <div class="project-tags">
                         <span class="project-tag">Windows Server</span>
                         <span class="project-tag">Active Directory</span>
@@ -1228,19 +1263,19 @@
             </div>
             
             <div class="veille-content">
-
+                
                 <!-- Article 1 -->
-                 <div class="veille-item">
+                <div class="veille-item">
             <h3>Intelligence Artificielle</h3>
         <div class="veille-meta">
       <span><i class="far fa-calendar-alt"></i> 15 mars 2025</span>
       <span><i class="fas fa-tag"></i> IA</span>
     </div>
     <p>Découvrez les nouvelles actualités concernant les IA</p>
-    <a href="https://www.google.fr/search?q=Inteligence+artificielle+actualit%C3%A9s&sca_esv=7c7b298578be5db7&biw=1912&bih=954&tbm=nws&sxsrf=AHTn8zpN2a7Kn6L_fmly4YK65-QdXq2fbw%3A1744186897364&ei=ES72Z_yCFoaYkdUPgoaiiAo&ved=0ahUKEwi8z8HDwsqMAxUGTKQEHQKDCKEQ4dUDCA4&uact=5&oq=Inteligence+artificielle+actualit%C3%A9s&gs_lp=Egxnd3Mtd2l6LW5ld3MiJEludGVsaWdlbmNlIGFydGlmaWNpZWxsZSBhY3R1YWxpdMOpczIHEAAYgAQYDTIIEAAYgAQYogQyCBAAGIAEGKIESMgrUI4JWPspcAF4AJABAJgBWKAB_wuqAQIyOLgBA8gBAPgBAZgCHKAClQzCAgYQABgIGB7CAgUQABjvBcICDRAAGIAEGLEDGIMBGArCAgoQABiABBixAxgKwgINEAAYgAQYsQMYgwEYDcICChAAGIAEGLEDGA3CAgYQABgHGB7CAggQABgHGAgYHsICCBAAGKIEGIkFwgIIEAAYCBgNGB7CAgoQIRigARjDBBgKmAMAiAYBkgcCMjigB5x1sgcCMje4B5IM&sclient=gws-wiz-news" 
-       class="veille-link" 
-       target="_blank" 
-       rel="noopener noreferrer"
+    <a href="https://www.google.fr/search?q=Inteligence+artificielle+actualit%C3%A9s&sca_esv=7c7b298578be5db7&biw=1912&bih=954&tbm=nws&sxsrf=AHTn8zpN2a7Kn6L_fmly4YK65-QdXq2fbw%3A1744186897364&ei=ES72Z_yCFoaYkdUPgoaiiAo&ved=0ahUKEwi8z8HDwsqMAxUGTKQEHQKDCKEQ4dUDCA4&uact=5&oq=Inteligence+artificielle+actualit%C3%A9s&gs_lp=Egxnd3Mtd2l6LW5ld3MiJEludGVsaWdlbmNlIGFydGlmaWNpZWxsZSBhY3R1YWxpdMOpczIHEAAYgAQYDTIIEAAYgAQYogQyCBAAGIAEGKIESMgrUI4JWPspcAF4AJABAJgBWKAB_wuqAQIyOLgBA8gBAPgBAZgCHKAClQzCAgYQABgIGB7CAgUQABjvBcICDRAAGIAEGLEDGIMBGArCAgoQABiABBixAxgKwgINEAAYgAQYsQMYgwEYDcICChAAGIAEGLEDGA3CAgYQABgHGB7CAggQABgHGAgYHsICCBAAGKIEGIkFwgIIEAAYCBgNGB7CAgoQIRigARjDBBgKmAMAiAYBkgcCMjigB5x1sgcCMje4B5IM&sclient=gws-wiz-news"
+        class="veille-link"
+        target="_blank"
+        rel="noopener noreferrer"
        style="text-decoration: underline;">
     <span style="text-decoration: underline;">Lire les news ici</span> <i class="fas fa-arrow-right"></i>
     </a>
@@ -1254,10 +1289,11 @@
                         <span><i class="fas fa-tag"></i> Cybersécurité </span>
                     </div>
                     <p>Découvrez les nouvelles actualités concernant la Cybersécurité</p>
-                     <a href="https://www.google.fr/search?sca_esv=7c7b298578be5db7&sxsrf=AHTn8zqsxlsU7irl6DqmIloghycpxCMgag:1744186894458&q=cybersecurit%C3%A9+actualit%C3%A9s&tbm=nws&source=lnms&fbs=ABzOT_BnMAgCWdhr5zilP5f1cnRvLRlE4r2qD5th19etEw_BIrqwYE5PbPwvM8B-2ZnQgn67iZif8zvi3YQrnhyBDixoeX9SHy0upxXx_OuspMYKzGXHfJKDo3lffhnKoouUt-3lrFurnkyaIIfH9nQHIuVoiwsOJ3NYH8nBgDspaIxi-NOS5Z83x91stzo0Ld5LMW58489olnRI_4b4iDXyYged-edckK0oO0u7-lJtL1JPSW0HqgA&sa=X&ved=2ahUKEwiUmZDCwsqMAxVvV6QEHf85OyoQ0pQJegQIHBAB&biw=1912&bih=954&dpr=1"
-                  class="veille-link" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                    
+                    <a href="https://www.google.fr/search?sca_esv=7c7b298578be5db7&sxsrf=AHTn8zqsxlsU7irl6DqmIloghycpxCMgag:1744186894458&q=cybersecurit%C3%A9+actualit%C3%A9s&tbm=nws&source=lnms&fbs=ABzOT_BnMAgCWdhr5zilP5f1cnRvLRlE4r2qD5th19etEw_BIrqwYE5PbPwvM8B-2ZnQgn67iZif8zvi3YQrnhyBDixoeX9SHy0upxXx_OuspMYKzGXHfJKDo3lffhnKoouUt-3lrFurnkyaIIfH9nQHIuVoiwsOJ3NYH8nBgDspaIxi-NOS5Z83x91stzo0Ld5LMW58489olnRI_4b4iDXyYged-edckK0oO0u7-lJtL1JPSW0HqgA&sa=X&ved=2ahUKEwiUmZDCwsqMAxVvV6QEHf85OyoQ0pQJegQIHBAB&biw=1912&bih=954&dpr=1"
+                  class="veille-link"
+                   target="_blank"
+                   rel="noopener noreferrer"
                   style="text-decoration: underline;">
     <span style="text-decoration: underline;">Lire les news ici</span> <i class="fas fa-arrow-right"></i>
             </a>
@@ -1270,7 +1306,7 @@
                         <span><i class="far fa-calendar-alt"></i> 2 juillet 2019</span>
                         <span><i class="fas fa-tag"></i> Architecture</span>
                     </div>
-                    <p>Comment l’intelligence artificielle améliore la sécurité, sur le web et en vrai.</p>
+                    <p>Comment l'intelligence artificielle améliore la sécurité, sur le web et en vrai.</p>
                     <a href="https://www.lebigdata.fr/intelligence-artificielle-securite">
                         Lire l'article <i class="fas fa-arrow-right"></i>
                     </a>
@@ -1348,7 +1384,6 @@
         </div>
     </div>
 </section>
-
     
     <!-- Footer -->
     <footer>
@@ -1370,8 +1405,7 @@
             <div class="footer-column">
                 <h3>Contact</h3>
                 <a href="mailto:r.letondeurr@laposte.net">r.letondeur@laposte.net</a>
-                <a href="tel:+33612345678">+33 6 12 34 56 78</a>
-                <p>Paris, France</p>
+                <a href="tel:+33612345678">+33 6 12 34 56 78</p>
             </div>
         </div>
         
@@ -1547,8 +1581,8 @@
         const sunIcon = themeToggle.querySelector('.fa-sun');
         
         // Vérifier le thème stocké ou la préférence système
-        const currentTheme = localStorage.getItem('theme') || 
-                           (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        const currentTheme = localStorage.getItem('theme') ||
+                            (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
         
         // Appliquer le thème au chargement
         if (currentTheme === 'light') {
