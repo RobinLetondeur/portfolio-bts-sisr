@@ -183,34 +183,6 @@
             background: rgba(74, 111, 165, 0.1);
         }
 
-        /* Certification Badge */
-        .certification-badge {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(74, 111, 165, 0.2);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            margin-right: 1rem;
-            border: 1px solid rgba(74, 111, 165, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .certification-badge:hover {
-            background: rgba(74, 111, 165, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .certification-badge i {
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-
-        .certification-badge span {
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -351,7 +323,6 @@
             height: auto;
             display: block;
             transition: transform 0.5s ease; }
-
         .about-image:hover img {
             transform: scale(1.05);
         }
@@ -435,7 +406,7 @@
 
         .project-info {
             padding: 1.5rem;
-        }
+}
 
         .project-info h3 {
             font-size: 1.3rem;
@@ -461,8 +432,7 @@
             color: var(--primary-light);
             padding: 0.2rem 0.8rem;
             border-radius: 50px;
-            font-size: 0.8rem;
-}
+            font-size: 0.8rem; }
 
         .project-links {
             display: flex;
@@ -770,8 +740,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            text-align: left;
-}
+            text-align: left; }
 
         .footer-column h3 {
             color: var(--primary);
@@ -858,7 +827,7 @@
 
         .close-modal:hover {
             color: var(--accent);
-        }
+}
 
         .modal-header {
             margin-bottom: 2rem;
@@ -1126,10 +1095,6 @@
             .modal-links {
                 flex-direction: column;
             }
-
-            .certification-badge {
-                display: none;
-            }
         }
 
         @media (max-width: 576px) {
@@ -1176,10 +1141,6 @@
                 <a href="#certifications">Certifications</a>
                 <a href="#veille">Veille techno</a>
                 <a href="#contact">Contact</a>
-            </div>
-            <div class="certification-badge">
-                <i class="fas fa-certificate"></i>
-                <span>Certification</span>
             </div>
             <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
                 <i class="fas fa-moon"></i>
@@ -1291,7 +1252,7 @@
                     </div>
                 </div>
             </div>
-            
+                    
             <!-- Projet 2 -->
             <div class="project-card">
                 <div class="project-image">
@@ -1316,7 +1277,7 @@
                     </div>
                 </div>
             </div>
-            
+                    
             <!-- Projet 3 -->
             <div class="project-card">
                 <div class="project-image">
@@ -1447,26 +1408,26 @@
             <div class="veille-intro">
                 <p>Dans le cadre de ma formation et par passion personnelle, je mène une veille technologique active sur les dernières tendances en Intelligence Artificielle et comment elle peux nous aider en terme de cybersécurité.</p>
             </div>
-            
+                    
             <div class="veille-content">
-                
+                    
                 <!-- Article 1 -->
                 <div class="veille-item">
-            <h3>Intelligence Artificielle</h3>
-        <div class="veille-meta">
-      <span><i class="far fa-calendar-alt"></i> 15 mars 2025</span>
-      <span><i class="fas fa-tag"></i> IA</span>
-    </div>
-    <p>Découvrez les nouvelles actualités concernant les IA</p>
-    <a href="https://www.google.fr/search?q=Inteligence+artificielle+actualit%C3%A9s&sca_esv=7c7b298578be5db7&biw=1912&bih=954&tbm=nws&sxsrf=AHTn8zpN2a7Kn6L_fmly4YK65-QdXq2fbw%3A1744186897364&ei=ES72Z_yCFoaYkdUPgoaiiAo&ved=0ahUKEwi8z8HDwsqMAxUGTKQEHQKDCKEQ4dUDCA4&uact=5&oq=Inteligence+artificielle+actualit%C3%A9s&gs_lp=Egxnd3Mtd2l6LW5ld3MiJEludGVsaWdlbmNlIGFydGlmaWNpZWxsZSBhY3R1YWxpdMOpczIHEAAYgAQYDTIIEAAYgAQYogQyCBAAGIAEGKIESMgrUI4JWPspcAF4AJABAJgBWKAB_wuqAQIyOLgBA8gBAPgBAZgCHKAClQzCAgYQABgIGB7CAgUQABjvBcICDRAAGIAEGLEDGIMBGArCAgoQABiABBixAxgKwgINEAAYgAQYsQMYgwEYDcICChAAGIAEGLEDGA3CAgYQABgHGB7CAggQABgHGAgYHsICCBAAGKIEGIkFwgIIEAAYCBgNGB7CAgoQIRigARjDBBgKmAMAiAYBkgcCMjigB5x1sgcCMje4B5IM&sclient=gws-wiz-news"
-        class="veille-link"
-        target="_blank"
-        rel="noopener noreferrer"
-       style="text-decoration: underline;">
-    <span style="text-decoration: underline;">Lire les news ici</span> <i class="fas fa-arrow-right"></i>
-    </a>
+        <h3>Intelligence Artificielle</h3>
+    <div class="veille-meta">
+  <span><i class="far fa-calendar-alt"></i> 15 mars 2025</span>
+  <span><i class="fas fa-tag"></i> IA</span>
 </div>
-                
+<p>Découvrez les nouvelles actualités concernant les IA</p>
+<a href="https://www.google.fr/search?q=Inteligence+artificielle+actualit%C3%A9s&sca_esv=7c7b298578be5db7&biw=1912&bih=954&tbm=nws&sxsrf=AHTn8zpN2a7Kn6L_fmly4YK65-QdXq2fbw%3A1744186897364&ei=ES72Z_yCFoaYkdUPgoaiiAo&ved=0ahUKEwi8z8HDwsqMAxUGTKQEHQKDCKEQ4dUDCA4&uact=5&oq=Inteligence+artificielle+actualit%C3%A9s&gs_lp=Egxnd3Mtd2l6LW5ld3MiJEludGVsaWdlbmNlIGFydGlmaWNpZWxsZSBhY3R1YWxpdMOpczIHEAAYgAQYDTIIEAAYgAQYogQyCBAAGIAEGKIESMgrUI4JWPspcAF4AJABAJgBWKAB_wuqAQIyOLgBA8gBAPgBAZgCHKAClQzCAgYQABgIGB7CAgUQABjvBcICDRAAGIAEGLEDGIMBGArCAgoQABiABBixAxgKwgINEAAYgAQYsQMYgwEYDcICChAAGIAEGLEDGA3CAgYQABgHGB7CAggQABgHGAgYHsICCBAAGKIEGIkFwgIIEAAYCBgNGB7CAgoQIRigARjDBBgKmAMAiAYBkgcCMjigB5x1sgcCMje4B5IM&sclient=gws-wiz-news"
+    class="veille-link"
+    target="_blank"
+    rel="noopener noreferrer"
+   style="text-decoration: underline;">
+<span style="text-decoration: underline;">Lire les news ici</span> <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+                    
                 <!-- Article 2 -->
                 <div class="veille-item">
                     <h3>Cybersécurité</h3>
@@ -1477,14 +1438,14 @@
                     <p>Découvrez les nouvelles actualités concernant la Cybersécurité</p>
                     
                     <a href="https://www.google.fr/search?sca_esv=7c7b298578be5db7&sxsrf=AHTn8zqsxlsU7irl6DqmIloghycpxCMgag:1744186894458&q=cybersecurit%C3%A9+actualit%C3%A9s&tbm=nws&source=lnms&fbs=ABzOT_BnMAgCWdhr5zilP5f1cnRvLRlE4r2qD5th19etEw_BIrqwYE5PbPwvM8B-2ZnQgn67iZif8zvi3YQrnhyBDixoeX9SHy0upxXx_OuspMYKzGXHfJKDo3lffhnKoouUt-3lrFurnkyaIIfH9nQHIuVoiwsOJ3NYH8nBgDspaIxi-NOS5Z83x91stzo0Ld5LMW58489olnRI_4b4iDXyYged-edckK0oO0u7-lJtL1JPSW0HqgA&sa=X&ved=2ahUKEwiUmZDCwsqMAxVvV6QEHf85OyoQ0pQJegQIHBAB&biw=1912&bih=954&dpr=1"
-                  class="veille-link" 
-                   target="_blank"
-                   rel="noopener noreferrer"
-                  style="text-decoration: underline;">
-    <span style="text-decoration: underline;">Lire les news ici</span> <i class="fas fa-arrow-right"></i>
-            </a>
-       </div>
-                
+              class="veille-link"
+                target="_blank"
+               rel="noopener noreferrer"
+              style="text-decoration: underline;">
+<span style="text-decoration: underline;">Lire les news ici</span> <i class="fas fa-arrow-right"></i>
+    </a>
+   </div>
+                    
                 <!-- Article 3 -->
                 <div class="veille-item">
                     <h3>L'essor des architectures micro-frontend</h3>
@@ -1517,7 +1478,7 @@
                     <i class="fas fa-paper-plane"></i> Envoyer un email
                 </a>
             </div>
-            
+                    
             <!-- Carte Téléphone -->
             <div class="contact-card">
                 <h3><i class="fas fa-phone-alt"></i> Téléphone</h3>
@@ -1526,7 +1487,7 @@
                     <i class="fas fa-phone-alt"></i> Appeler
                 </a>
             </div>
-            
+                    
             <!-- Carte Réseaux sociaux -->
             <div class="contact-card">
                 <h3><i class="fas fa-share-alt"></i> Réseaux sociaux</h3>
@@ -1539,7 +1500,7 @@
                 </div>
             </div>
         </div>
-        
+                
         <!-- Formulaire de contact -->
         <div class="contact-form">
             <form id="contactForm">
@@ -1547,22 +1508,22 @@
                     <label for="name">Nom complet</label>
                     <input type="text" id="name" class="form-control" required>
                 </div>
-                
+                    
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" class="form-control" required>
                 </div>
-                
+                    
                 <div class="form-group">
                     <label for="subject">Sujet</label>
                     <input type="text" id="subject" class="form-control" required>
                 </div>
-                
+                    
                 <div class="form-group">
                     <label for="message">Message</label>
                     <textarea id="message" class="form-control" required></textarea>
                 </div>
-                
+                    
                 <button type="submit" class="submit-btn">
                     <i class="fas fa-paper-plane"></i> Envoyer le message
                 </button>
@@ -1578,7 +1539,7 @@
                 <h3>Robin LETONDEUR</h3>
                 <p>Étudiant en BTS SIO option SISR, passionné par le développement web et les nouvelles technologies.</p>
             </div>
-            
+                    
             <div class="footer-column">
                 <h3>Liens rapides</h3>
                 <a href="#accueil">Accueil</a>
@@ -1588,14 +1549,14 @@
                 <a href="#veille">Veille techno</a>
                 <a href="#contact">Contact</a>
             </div>
-            
+                    
             <div class="footer-column">
                 <h3>Contact</h3>
                 <a href="mailto:r.letondeurr@laposte.net">r.letondeur@laposte.net</a>
                 <a href="tel:+33612345678">+33 6 12 34 56 78</p>
             </div>
         </div>
-        
+                
         <div class="footer-bottom">
             <p>&copy; 2025 Robin LETONDEUR. Tous droits réservés.</p>
         </div>
@@ -1768,7 +1729,7 @@
         const sunIcon = themeToggle.querySelector('.fa-sun');
         
         // Vérifier le thème stocké ou la préférence système
-        const currentTheme = localStorage.getItem('theme') ||
+        const currentTheme = localStorage.getItem('theme') || 
                             (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
         
         // Appliquer le thème au chargement
@@ -1830,7 +1791,7 @@
                 link.addEventListener('click', function() {
                     if (navLinks.classList.contains('active')) {
                         navLinks.classList.remove('active');
-                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars'></i>';
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
                     }
                 });
             });
@@ -1840,5 +1801,44 @@
             let lastScroll = 0;
             
             window.addEventListener('scroll', function() {
-                const currentScroll =
+                const currentScroll = window.pageYOffset;
+                
+                if (currentScroll <= 0) {
+                    header.classList.remove('hidden');
+                    return;
+                }
+                
+                if (currentScroll > lastScroll && !header.classList.contains('hidden')) {
+                    // Scroll down
+                    header.classList.add('hidden');
+                } else if (currentScroll < lastScroll && header.classList.contains('hidden')) {
+                    // Scroll up
+                    header.classList.remove('hidden');
+                }
+                
+                lastScroll = currentScroll;
+            });
+            
+            // Gestion des modales de projets
+            document.querySelectorAll('.view-project').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const projectId = this.getAttribute('data-project');
+                    const modal = document.getElementById(`project-modal-${projectId}`);
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            document.querySelectorAll('.close-modal').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    this.closest('.project-modal').classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+            
+            // Fermer les modales en cliquant à l'extérieur
+            document.querySelectorAll('.project-modal').forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (
 </html>
