@@ -70,6 +70,12 @@
             background: var(--primary-light);
         }
 
+        /* Conteneurs principaux */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         /* Header */
         header {
             background: var(--header-bg);
@@ -175,7 +181,7 @@
             height: 40px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: center; 
             transition: all 0.3s ease;
         }
 
@@ -187,14 +193,20 @@
         .hero {
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
             padding: 10% 5%;
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
 
         .hero-content {
             max-width: 800px;
+            text-align: left; /* Alignement à gauche */
+            padding-left: 2rem; /* Marge à gauche pour décaler */
+            margin-right: auto; /* S'assurer que le contenu ne déborde pas à droite */
             z-index: 2;
         }
 
@@ -219,6 +231,7 @@
             display: flex;
             gap: 1.5rem;
             margin-top: 2rem;
+            justify-content: center;
         }
 
         .btn {
@@ -230,6 +243,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            justify-content: center;
         }
 
         .btn-primary {
@@ -256,26 +270,30 @@
         }
 
         .hero-image {
-            position: absolute;
-            right: 5%;
-            width: 40%;
-            max-width: 600px;
+            width: 100%;
+            max-width: 500px;
             height: auto;
             border-radius: 20px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
             opacity: 0.9;
-            transform: perspective(1000px) rotateY(-15deg);
+            margin: 2rem auto 0;
             transition: transform 0.5s ease;
         }
 
         .hero-image:hover {
-            transform: perspective(1000px) rotateY(-5deg);
+            transform: scale(1.05);
         }
 
         /* Sections communes */
         section {
             padding: 6rem 5%;
             position: relative;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .section-spacing {
+            padding: 6rem 5%;
         }
 
         .section-title {
@@ -316,14 +334,18 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            width: 66.67%; /* Aligner avec la taille de l'image */
+            max-width: 400px; /* Limiter la largeur */
+            aspect-ratio: 1 / 1; /* Rapport d'aspect pour rogner proprement */
         }
 
         .about-image img {
-            width: 100%;
-            height: auto;
+            width: 100%; /* Remplir le conteneur */
+            height: 100%; /* Remplir le conteneur */
+            object-fit: cover; /* Rogner l'image pour remplir sans déformer */
             display: block;
             transition: transform 0.5s ease;
-}
+        }
 
         .about-image:hover img {
             transform: scale(1.05);
@@ -370,12 +392,14 @@
 
         /* Section Projets */
         .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
             gap: 2rem;
         }
 
         .project-card {
+            flex: 0 1 350px;
             background: var(--card-bg);
             border-radius: 15px;
             overflow: hidden;
@@ -456,13 +480,81 @@
             color: var(--primary);
         }
 
+        /* Section Certifications */
+        .certifications-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .certification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .certification-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .certification-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .certification-icon {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .certification-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .certification-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .certification-description {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .certification-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .certification-tag {
+            background: rgba(74, 111, 165, 0.2);
+            color: var(--primary-light);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+        }
+
         /* Section Veille Technologique */
         .veille-container {
             max-width: 1000px;
             margin: 0 auto;
         }
 
-        .veille-intro {
+        .veilleintro {
             text-align: center;
             margin-bottom: 3rem;
             max-width: 800px;
@@ -522,17 +614,19 @@
 
         /* Section Contact */
         .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
             max-width: 1200px;
             margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
         }
 
-        .contact-info {
-            display: flex;
-            flex-direction: column;
+        .contact-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            width: 100%;
         }
 
         .contact-card {
@@ -585,6 +679,8 @@
         }
 
         .contact-form {
+            flex: 1;
+            min-width: 300px;
             background: var(--card-bg);
             padding: 2rem;
             border-radius: 15px;
@@ -924,32 +1020,34 @@
         .delay-4 { animation-delay: 0.8s; }
 
         /* Responsive */
-        @media (max-width: 992px) {
-            .about-content,
-            .contact-container {
-                grid-template-columns: 1fr;
+        @media (min-width: 992px) {
+            .hero {
+                flex-direction: row;
+                text-align: left;
             }
 
             .hero-image {
-                position: relative;
-                right: auto;
-                width: 80%;
-                max-width: 500px;
-                margin: 2rem auto 0;
-                transform: none;
+                position: absolute;
+                right: 5%;
+                width: 40%;
+                max-width: 600px;
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-container {
+                flex-direction: column;
+                align-items: center;
             }
 
-            .hero-image:hover {
-                transform: none;
+            .contact-row {
+                grid-template-columns: 1fr;
             }
 
-            .hero-content {
-                text-align: center;
-                margin: 0 auto;
-            }
-
-            .hero-btns {
-                justify-content: center;
+            .contact-form {
+                width: 100%;
             }
 
             .modal-body {
@@ -962,6 +1060,11 @@
 
             .modal-details {
                 order: 1;
+            }
+
+            .about-image {
+                width: 100%; /* Ajuster pour les petits écrans */
+                max-width: 300px;
             }
         }
 
@@ -998,7 +1101,8 @@
             }
 
             .projects-grid {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                align-items: center;
             }
 
             .hero {
@@ -1051,6 +1155,7 @@
                 <a href="#accueil" class="active">Accueil</a>
                 <a href="#apropos">À propos</a>
                 <a href="#projets">Projets</a>
+                <a href="#certifications">Certifications</a>
                 <a href="#veille">Veille techno</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -1065,7 +1170,7 @@
     <section class="hero" id="accueil">
         <div class="hero-content animate slide-up">
             <h2>Bonjour, bienvenue sur mon Portfolio</h2>
-            <p>Étudiant en BTS SIO (Services Informatiques aux Organisations) option SISR, passionné par l'informatique, vous trouverez l'ensemble des différentes réalisations que j'ai pu effectuer durant mes années de BTS SIO </p>
+            <p>Étudiant en BTS SIO (Services Informatiques aux Organisations) option SISR, passionné par l'informatique, vous trouverez l'ensemble des différentes réalisations que j'ai pu effectuer durant mes années de BTS SIO.</p>
             <div class="hero-btns">
                 <a href="#projets" class="btn btn-primary">
                     <i class="fas fa-eye"></i> Voir mes projets
@@ -1079,372 +1184,371 @@
     </section>
 
     <!-- À propos Section -->
-    <section id="apropos" class="animate slide-up delay-2">
+    <section id="apropos" class="section-spacing animate slide-up delay-2">
         <div class="section-title">
             <h2>À propos de moi</h2>
         </div>
-        <div class="about-content">
-            <div class="about-image">
-                <img src="oldRL.jpg" alt="Robin LETONDEUR">
-            </div>
-            <div class="about-text">
-                <h3>Analyste d'exploitation</h3>
-                <p>Actuellement en BTS SIO option SISR (Solutions d'infrastructure, systèmes et réseaux), je me spécialise dans l'exploitation de données. Passionné par les nouvelles technologies, j'aime apprendre et mettre en pratique mes connaissances à travers divers projets.</p>
-                <p> ? </p>
-                
-                <div class="skills">
-                    <div class="skill-category">
-                        <h4>ERP</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">On-Premise</span>
-                            <span class="skill-tag">Reporting</span>
-                            <span class="skill-tag">Workflow</span>
-                            <span class="skill-tag">Gestion</span>
-                            <span class="skill-tag">KPI</span>
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="oldRL.jpg" alt="Robin LETONDEUR">
+                </div>
+                <div class="about-text">
+                    <h3>Analyste d'exploitation</h3>
+                    <p>Actuellement en BTS SIO option SISR (Solutions d'infrastructure, systèmes et réseaux), je me spécialise dans l'exploitation de données. Passionné par les nouvelles technologies, j'aime apprendre et mettre en pratique mes connaissances à travers divers projets.</p>
+                    <p>Mon objectif est de continuer à développer mes compétences en gestion d'infrastructures et en sécurité des systèmes d'information.</p>
+                    
+                    <div class="skills">
+                        <div class="skill-category">
+                            <h4>ERP</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">On-Premise</span>
+                                <span class="skill-tag">Reporting</span>
+                                <span class="skill-tag">Workflow</span>
+                                <span class="skill-tag">Gestion</span>
+                                <span class="skill-tag">KPI</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Data Exchanger</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Sécurité</span>
+                                <span class="skill-tag">Échange et traçabilité</span>
+                                <span class="skill-tag">Circulation des données</span>
+                                <span class="skill-tag">Partage de données</span>
+                                <span class="skill-tag">API</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Outils & Méthodes</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Windows Server</span>
+                                <span class="skill-tag">Linux</span>
+                                <span class="skill-tag">Analyse de données</span>
+                                <span class="skill-tag">PowerShell</span>
+                                <span class="skill-tag">GLPI</span>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="skill-category">
-                        <h4>Data Exhanger</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Sécurtié</span>
-                            <span class="skill-tag">Echange et tracabilité des données</span>
-                            <span class="skill-tag">Circulation des données</span>
-                            <span class="skill-tag">Partage de données</span>
-                            <span class="skill-tag">?</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h4>Outils & Méthodes</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">OS</span>
-                            <span class="skill-tag">Serveur</span>
-                            <span class="skill-tag">Analyse</span>
-                            <span class="skill-tag">?</span>
-                            <span class="skill-tag">?</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <a href="#" class="btn btn-primary" style="margin-top: 1.5rem;">
-                    <i class="fas fa-download"></i> Télécharger mon CV
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projets Section -->
-    <section id="projets" class="animate slide-up delay-3">
-        <div class="section-title">
-            <h2>Mes projets E6 </h2>
-        </div>
-        <div class="projects-grid">
-            <!-- Projet 1 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="ChatGPT Image 7 avr. 2025, 10_01_54.png">
-                </div>
-                <div class="project-info">
-                    <h3>Création d'un Active Directory sous Windows Server 2022</h3>
-                    <p>Mise en place d’un Active Directory sous Windows Server 2022. Pour répondre à ce besoin, je mets en place d’un contrôleur de domaine avec les services AD-DS, DNS, GPO, DHCP afin de centraliser les utilisateurs et les ressources informatiques.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Windows Server</span>
-                        <span class="project-tag">Active Directory</span>
-                        <span class="project-tag">Attribution de rôles</span>
-                        <span class="project-tag"> ? </span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="view-project" data-project="1">
-                            <i class="fas fa-external-link-alt"></i> Voir le projet
-                        </a>
-                        <a href="#">
-                            <i class="fab fa-github"></i> Code source
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Projet 2 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Projet 2">
-                </div>
-                <div class="project-info">
-                    <h3>Mise en place d'un outil de ticketing GLPI sous Linux</h3>
-                    <p>Plateforme e-commerce avec système de paiement, gestion de catalogue et espace client.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Linux</span>
-                        <span class="project-tag">GLPI</span>
-                        <span class="project-tag">?</span>
-                        <span class="project-tag">?</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="view-project" data-project="2">
-                            <i class="fas fa-external-link-alt"></i> Voir le projet
-                        </a>
-                        <a href="#">
-                            <i class="fab fa-github"></i> Code source
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-<!-- Certification Section -->
-<section id="certifications" class="animate slide-up delay-4 section-spacing">
-    <div class="section-title">
-        <h2>Mes Certifications</h2>
-    </div>
-    <div class="certifications-container">
-        <div class="certification-grid">
-
-            <!-- Certification 1 -->
-            <div class="certification-card">
-                <div class="certification-header">
-                    <i class="fas fa-shield-alt certification-icon"></i>
-                    <div class="certification-title">Certification Cybersécurité</div>
-                </div>
-                <div class="certification-body">
-                    <div class="certification-meta">
-                        <span><i class="far fa-calendar-alt"></i> Octobre 2024</span>
-                        <span><i class="fas fa-award"></i> CompTIA Security+</span>
-                    </div>
-                    <div class="certification-description">
-                        Certification reconnue internationalement qui valide les compétences fondamentales en cybersécurité, 
-                        y compris la gestion des risques, la cryptographie, les architectures de sécurité et les opérations de sécurité.
-                    </div>
-                    <div class="certification-skills">
-                        <h4>Compétences validées :</h4>
-                        <div class="certification-tags">
-                            <span class="certification-tag">Sécurité réseau</span>
-                            <span class="certification-tag">Cryptographie</span>
-                            <span class="certification-tag">Gestion des vulnérabilités</span>
-                            <span class="certification-tag">Analyse des risques</span>
-                            <span class="certification-tag">Architecture de sécurité</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Certification 2 -->
-            <div class="certification-card">
-                <div class="certification-header">
-                    <i class="fas fa-network-wired certification-icon"></i>
-                    <div class="certification-title">Certification Réseaux</div>
-                </div>
-                <div class="certification-body">
-                    <div class="certification-meta">
-                        <span><i class="far fa-calendar-alt"></i> Mars 2024</span>
-                        <span><i class="fas fa-award"></i> Cisco CCNA</span>
-                    </div>
-                    <div class="certification-description">
-                        Certification Cisco Certified Network Associate qui atteste des compétences en installation, configuration, 
-                        exploitation et dépannage des réseaux de taille moyenne, y compris l'implémentation et la vérification des connexions.
-                    </div>
-                    <div class="certification-skills">
-                        <h4>Compétences validées :</h4>
-                        <div class="certification-tags">
-                            <span class="certification-tag">Routage et commutation</span>
-                            <span class="certification-tag">Protocoles réseau</span>
-                            <span class="certification-tag">Sécurité réseau</span>
-                            <span class="certification-tag">IPv4/IPv6</span>
-                            <span class="certification-tag">WAN technologies</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Certification 3 -->
-            <div class="certification-card">
-                <div class="certification-header">
-                    <i class="fab fa-microsoft certification-icon"></i>
-                    <div class="certification-title">Certification Microsoft</div>
-                </div>
-                <div class="certification-body">
-                    <div class="certification-meta">
-                        <span><i class="far fa-calendar-alt"></i> Juin 2024</span>
-                        <span><i class="fas fa-award"></i> Microsoft Azure Administrator</span>
-                    </div>
-                    <div class="certification-description">
-                        Certification qui valide les compétences en implémentation, gestion et surveillance des environnements Microsoft Azure, 
-                        y compris les services de calcul, de stockage, de réseau et de sécurité.
-                    </div>
-                    <div class="certification-skills">
-                        <h4>Compétences validées :</h4>
-                        <div class="certification-tags">
-                            <span class="certification-tag">Azure Virtual Machines</span>
-                            <span class="certification-tag">Azure Active Directory</span>
-                            <span class="certification-tag">Stockage Azure</span>
-                            <span class="certification-tag">Réseau virtuel Azure</span>
-                            <span class="certification-tag">Sécurité Azure</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Veille Technologique Section -->
-    <section id="veille" class="animate slide-up delay-4">
-        <div class="section-title">
-            <h2>Veille technologique</h2>
-        </div>
-        <div class="veille-container">
-            <div class="veille-intro">
-                <p>Dans le cadre de ma formation et par passion personnelle, je mène une veille technologique active sur les dernières tendances en Intelligence Artificielle et comment elle peux nous aider en terme de cybersécurité.</p>
-            </div>
-            
-            <div class="veille-content">
-
-                <!-- Article 1 -->
-                 <div class="veille-item">
-            <h3>Intelligence Artificielle</h3>
-        <div class="veille-meta">
-      <span><i class="far fa-calendar-alt"></i> 15 mars 2025</span>
-      <span><i class="fas fa-tag"></i> IA</span>
-    </div>
-    <p>Découvrez les nouvelles actualités concernant les IA</p>
-    <a href="https://www.google.fr/search?q=Inteligence+artificielle+actualit%C3%A9s&sca_esv=7c7b298578be5db7&biw=1912&bih=954&tbm=nws&sxsrf=AHTn8zpN2a7Kn6L_fmly4YK65-QdXq2fbw%3A1744186897364&ei=ES72Z_yCFoaYkdUPgoaiiAo&ved=0ahUKEwi8z8HDwsqMAxUGTKQEHQKDCKEQ4dUDCA4&uact=5&oq=Inteligence+artificielle+actualit%C3%A9s&gs_lp=Egxnd3Mtd2l6LW5ld3MiJEludGVsaWdlbmNlIGFydGlmaWNpZWxsZSBhY3R1YWxpdMOpczIHEAAYgAQYDTIIEAAYgAQYogQyCBAAGIAEGKIESMgrUI4JWPspcAF4AJABAJgBWKAB_wuqAQIyOLgBA8gBAPgBAZgCHKAClQzCAgYQABgIGB7CAgUQABjvBcICDRAAGIAEGLEDGIMBGArCAgoQABiABBixAxgKwgINEAAYgAQYsQMYgwEYDcICChAAGIAEGLEDGA3CAgYQABgHGB7CAggQABgHGAgYHsICCBAAGKIEGIkFwgIIEAAYCBgNGB7CAgoQIRigARjDBBgKmAMAiAYBkgcCMjigB5x1sgcCMje4B5IM&sclient=gws-wiz-news" 
-       class="veille-link" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       style="text-decoration: underline;">
-    <span style="text-decoration: underline;">Lire les news ici</span> <i class="fas fa-arrow-right"></i>
-    </a>
-</div>
-                
-                <!-- Article 2 -->
-                <div class="veille-item">
-                    <h3>Cybersécurité</h3>
-                    <div class="veille-meta">
-                        <span><i class="far fa-calendar-alt"></i> 2 mai 2023</span>
-                        <span><i class="fas fa-tag"></i> Cybersécurité </span>
-                    </div>
-                    <p>Découvrez les nouvelles actualités concernant la Cybersécurité</p>
-                     <a href="https://www.google.fr/search?sca_esv=7c7b298578be5db7&sxsrf=AHTn8zqsxlsU7irl6DqmIloghycpxCMgag:1744186894458&q=cybersecurit%C3%A9+actualit%C3%A9s&tbm=nws&source=lnms&fbs=ABzOT_BnMAgCWdhr5zilP5f1cnRvLRlE4r2qD5th19etEw_BIrqwYE5PbPwvM8B-2ZnQgn67iZif8zvi3YQrnhyBDixoeX9SHy0upxXx_OuspMYKzGXHfJKDo3lffhnKoouUt-3lrFurnkyaIIfH9nQHIuVoiwsOJ3NYH8nBgDspaIxi-NOS5Z83x91stzo0Ld5LMW58489olnRI_4b4iDXyYged-edckK0oO0u7-lJtL1JPSW0HqgA&sa=X&ved=2ahUKEwiUmZDCwsqMAxVvV6QEHf85OyoQ0pQJegQIHBAB&biw=1912&bih=954&dpr=1"
-                  class="veille-link" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  style="text-decoration: underline;">
-    <span style="text-decoration: underline;">Lire les news ici</span> <i class="fas fa-arrow-right"></i>
-            </a>
-       </div>
-                
-                <!-- Article 3 -->
-                <div class="veille-item">
-                    <h3>L'essor des architectures micro-frontend</h3>
-                    <div class="veille-meta">
-                        <span><i class="far fa-calendar-alt"></i> 2 juillet 2019</span>
-                        <span><i class="fas fa-tag"></i> Architecture</span>
-                    </div>
-                    <p>Comment l’intelligence artificielle améliore la sécurité, sur le web et en vrai.</p>
-                    <a href="https://www.lebigdata.fr/intelligence-artificielle-securite">
-                        Lire l'article <i class="fas fa-arrow-right"></i>
+                    <a href="#" class="btn btn-primary" style="margin-top: 1.5rem;">
+                        <i class="fas fa-download"></i> Télécharger mon CV
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- Contact Section -->
-<section id="contact">
-    <div class="section-title">
-        <h2>Contactez-moi</h2>
-    </div>
-    <div class="contact-container">
-        <!-- Première ligne avec les cartes de contact -->
-        <div class="contact-row">
-            <!-- Carte Email -->
-            <div class="contact-card">
-                <h3><i class="fas fa-envelope"></i> Email</h3>
-                <p>r.letondeur@laposte.net</p>
-                <a href="mailto:r.letondeur@laposte.net" class="btn btn-secondary">
-                    <i class="fas fa-paper-plane"></i> Envoyer un email
-                </a>
-            </div>
-            
-            <!-- Carte Téléphone -->
-            <div class="contact-card">
-                <h3><i class="fas fa-phone-alt"></i> Téléphone</h3>
-                <p>+33 6 61 56 60 26</p>
-                <a href="tel:+33661566026" class="btn btn-secondary">
-                    <i class="fas fa-phone-alt"></i> Appeler
-                </a>
-            </div>
-            
-            <!-- Carte Réseaux sociaux -->
-            <div class="contact-card">
-                <h3><i class="fas fa-share-alt"></i> Réseaux sociaux</h3>
-                <p>Retrouvez-moi sur les réseaux professionnels</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <!-- Projets Section -->
+    <section id="projets" class="section-spacing animate slide-up delay-3">
+        <div class="section-title">
+            <h2>Mes projets E6</h2>
+        </div>
+        <div class="container">
+            <div class="projects-grid">
+                <!-- Projet 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="ChatGPT Image 7 avr. 2025, 10_01_54.png" alt="Active Directory">
+                    </div>
+                    <div class="project-info">
+                        <h3>Création d'un Active Directory sous Windows Server 2022</h3>
+                        <p>Mise en place d’un Active Directory sous Windows Server 2022. Pour répondre à ce besoin, j'ai mis en place un contrôleur de domaine avec les services AD-DS, DNS, GPO, DHCP afin de centraliser les utilisateurs et les ressources informatiques.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Windows Server</span>
+                            <span class="project-tag">Active Directory</span>
+                            <span class="project-tag">Attribution de rôles</span>
+                            <span class="project-tag">PowerShell</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="view-project" data-project="1">
+                                <i class="fas fa-external-link-alt"></i> Voir le projet
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-github"></i> Code source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1469&q=80" alt="GLPI Ticketing">
+                    </div>
+                    <div class="project-info">
+                        <h3>Mise en place d'un outil de ticketing GLPI sous Linux</h3>
+                        <p>Implémentation d'une solution de ticketing et de gestion de parc informatique avec GLPI sous Linux CentOS, intégrant des workflows personnalisés et des notifications.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Linux</span>
+                            <span class="project-tag">GLPI</span>
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">Apache</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="view-project" data-project="2">
+                                <i class="fas fa-external-link-alt"></i> Voir le projet
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-github"></i> Code source
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        
-        <!-- Formulaire de contact -->
-        <div class="contact-form">
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Nom complet</label>
-                    <input type="text" id="name" class="form-control" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" class="form-control" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="subject">Sujet</label>
-                    <input type="text" id="subject" class="form-control" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" class="form-control" required></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">
-                    <i class="fas fa-paper-plane"></i> Envoyer le message
-                </button>
-            </form>
-        </div>
-    </div>
-</section>
+    </section>
 
-    
+    <!-- Certification Section -->
+    <section id="certifications" class="section-spacing animate slide-up delay-4">
+        <div class="section-title">
+            <h2>Mes Certifications</h2>
+        </div>
+        <div class="container">
+            <div class="certifications-container">
+                <div class="certification-grid">
+                    <!-- Certification 1 -->
+<div class="certification-card">
+    <div class="certification-header">
+        <i class="fas fa-shield-alt certification-icon"></i>
+        <div class="certification-title">Certification Cybersécurité</div>
+    </div>
+    <div class="certification-body">
+        <div class="certification-meta">
+            <span><i class="far fa-calendar-alt"></i> Octobre 2024</span>
+            <span><i class="fas fa-award"></i> SecNum Académie</span>
+        </div>
+        <div class="certification-description">
+       Le MOOC est un outil supplémentaire pour sensibiliser aux enjeux de la sécurité du numérique. Celle-ci repose dans de nombreux cas sur la mise en place de mesures simples et des bonnes pratiques dans la sphère professionnelle comme dans la sphère privée.
+        </div>
+        <div class="certification-skills">
+            <h4>Compétences validées :</h4>
+            <div class="certification-tags">
+                <span class="certification-tag">Sécurité réseau</span>
+                <span class="certification-tag">Cryptographie</span>
+                <span class="certification-tag">Gestion des vulnérabilités</span>
+                <span class="certification-tag">Analyse des risques</span>
+                <span class="certification-tag">Architecture de sécurité</span>
+            </div>
+        </div>
+        <div class="certification-proof">
+            <a href="AttestationCertifSecNum.pdf" target="_blank" class="proof-link"><i class="fas fa-file-pdf"></i> Voir la preuve de certification</a>
+        </div>
+    </div>
+</div>
+
+                    <!-- Certification 2 -->
+                    <div class="certification-card">
+                        <div class="certification-header">
+                            <i class="fas fa-network-wired certification-icon"></i>
+                            <div class="certification-title">Certification Réseaux</div>
+                        </div>
+                        <div class="certification-body">
+                            <div class="certification-meta">
+                                <span><i class="far fa-calendar-alt"></i> Mars 2024</span>
+                                <span><i class="fas fa-award"></i> Cisco CCNA</span>
+                            </div>
+                            <div class="certification-description">
+                                Certification Cisco Certified Network Associate qui atteste des compétences en installation, configuration, 
+                                exploitation et dépannage des réseaux de taille moyenne, y compris l'implémentation et la vérification des connexions.
+                            </div>
+                            <div class="certification-skills">
+                                <h4>Compétences validées :</h4>
+                                <div class="certification-tags">
+                                    <span class="certification-tag">Routage et commutation</span>
+                                    <span class="certification-tag">Protocoles réseau</span>
+                                    <span class="certification-tag">Sécurité réseau</span>
+                                    <span class="certification-tag">IPv4/IPv6</span>
+                                    <span class="certification-tag">WAN technologies</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certification 3 -->
+                    <div class="certification-card">
+                        <div class="certification-header">
+                            <i class="fab fa-microsoft certification-icon"></i>
+                            <div class="certification-title">Certification Microsoft</div>
+                        </div>
+                        <div class="certification-body">
+                            <div class="certification-meta">
+                                <span><i class="far fa-calendar-alt"></i> Juin 2024</span>
+                                <span><i class="fas fa-award"></i> Microsoft Azure Administrator        
+                            </div>
+                            <div class="certification-description">
+                                Certification qui valide les compétences en implémentation, gestion et surveillance des environnements Microsoft Azure, 
+                                y compris les services de calcul, de stockage, de réseau et de sécurité.
+                            </div>
+                            <div class="certification-skills">
+                                <h4>Compétences validées :</h4>
+                                <div class="certification-tags">
+                                    <span class="certification-tag">Azure Virtual Machines</span>
+                                    <span class="certification-tag">Azure Active Directory</span>
+                                    <span class="certification-tag">Stockage Azure</span>
+                                    <span class="certification-tag">Réseau virtuel Azure</span>
+                                    <span class="certification-tag">Sécurité Azure</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Veille Technologique Section -->
+    <section id="veille" class="section-spacing animate slide-up delay-4">
+        <div class="section-title">
+            <h2>Veille technologique</h2>
+        </div>
+        <div class="container">
+            <div class="veille-container">
+                <div class="veille-intro">
+                    <p>Dans le cadre de ma formation et par passion personnelle, je mène une veille technologique active sur les dernières tendances en Intelligence Artificielle et comment elle peut nous aider en termes de cybersécurité.</p>
+                </div>
+                
+                <div class="veille-content">
+                    <!-- Article 1 -->
+                    <div class="veille-item">
+                        <h3>Intelligence Artificielle</h3>
+                        <div class="veille-meta">
+                            <span><i class="far fa-calendar-alt"></i> 15 mars 2025</span>
+                            <span><i class="fas fa-tag"></i> IA</span>
+                        </div>
+                        <p>Découvrez les nouvelles actualités concernant les IA.</p>
+                        <a href="https://www.google.fr/search?q=Inteligence+artificielle+actualit%C3%A9s" 
+                           class="veille-link" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            Lire les news ici <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Article 2 -->
+                    <div class="veille-item">
+                        <h3>Cybersécurité</h3>
+                        <div class="veille-meta">
+                            <span><i class="far fa-calendar-alt"></i> 2 mai 2023</span>
+                            <span><i class="fas fa-tag"></i> Cybersécurité</span>
+                        </div>
+                        <p>Découvrez les nouvelles actualités concernant la cybersécurité.</p>
+                        <a href="https://www.google.fr/search?q=cybersecurit%C3%A9+actualit%C3%A9s&tbm=nws" 
+                           class="veille-link" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            Lire les news ici <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Article 3 -->
+                    <div class="veille-item">
+                        <h3>L'essor des architectures micro-frontend</h3>
+                        <div class="veille-meta">
+                            <span><i class="far fa-calendar-alt"></i> 2 juillet 2019</span>
+                            <span><i class="fas fa-tag"></i> Architecture</span>
+                        </div>
+                        <p>Comment l’intelligence artificielle améliore la sécurité, sur le web et en vrai.</p>
+                        <a href="https://www.lebigdata.fr/intelligence-artificielle-securite" class="veille-link" target="_blank" rel="noopener noreferrer">
+                            Lire l'article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-spacing animate slide-up delay-4">
+        <div class="section-title">
+            <h2>Contactez-moi</h2>
+        </div>
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-row">
+                    <div class="contact-card">
+                        <h3><i class="fas fa-envelope"></i> Email</h3>
+                        <p>r.letondeur@laposte.net</p>
+                        <a href="mailto:r.letondeur@laposte.net" class="btn btn-secondary">
+                            <i class="fas fa-paper-plane"></i> Envoyer un email
+                        </a>
+                    </div>
+                    <div class="contact-card">
+                        <h3><i class="fas fa-phone-alt"></i> Téléphone</h3>
+                        <p>+33 6 61 56 60 26</p>
+                        <a href="tel:+33661566026" class="btn btn-secondary">
+                            <i class="fas fa-phone-alt"></i> Appeler
+                        </a>
+                    </div>
+                    <div class="contact-card">
+                        <h3><i class="fas fa-share-alt"></i> Réseaux sociaux</h3>
+                        <p>Retrouvez-moi sur les réseaux professionnels</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Sujet</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Envoyer le message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>Robin LETONDEUR</h3>
-                <p>Étudiant en BTS SIO option SISR, passionné par le développement web et les nouvelles technologies.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Robin LETONDEUR</h3>
+                    <p>Étudiant en BTS SIO option SISR, passionné par le développement web et les nouvelles technologies.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Liens rapides</h3>
+                    <a href="#accueil">Accueil</a>
+                    <a href="#apropos">À propos</a>
+                    <a href="#projets">Projets</a>
+                    <a href="#veille">Veille techno</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <a href="mailto:r.letondeur@laposte.net">r.letondeur@laposte.net</a>
+                    <a href="tel:+33661566026">+33 6 61 56 60 26</a>
+                    <p>Paris, France</p>
+                </div>
             </div>
             
-            <div class="footer-column">
-                <h3>Liens rapides</h3>
-                <a href="#accueil">Accueil</a>
-                <a href="#apropos">À propos</a>
-                <a href="#projets">Projets</a>
-                <a href="#veille">Veille techno</a>
-                <a href="#contact">Contact</a>
+            <div class="footer-bottom">
+                <p>© 2025 Robin LETONDEUR. Tous droits réservés.</p>
             </div>
-            
-            <div class="footer-column">
-                <h3>Contact</h3>
-                <a href="mailto:r.letondeurr@laposte.net">r.letondeur@laposte.net</a>
-                <a href="tel:+33612345678">+33 6 12 34 56 78</a>
-                <p>Paris, France</p>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 Robin LETONDEUR. Tous droits réservés.</p>
         </div>
     </footer>
 
@@ -1452,7 +1556,7 @@
     <!-- Modale Projet 1 -->
     <div class="project-modal" id="project-modal-1">
         <div class="modal-content">
-            <button class="close-modal">&times;</button>
+            <button class="close-modal">×</button>
             <div class="modal-header">
                 <h2>Création d'un Active Directory sous Windows Server 2022</h2>
                 <div class="project-meta">
@@ -1463,7 +1567,7 @@
             <div class="modal-body">
                 <div class="modal-images">
                     <img src="ChatGPT Image 7 avr. 2025, 10_01_54.png" alt="Capture d'écran du projet">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Détails techniques">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Détails techniques">
                 </div>
                 <div class="modal-details">
                     <h3>Description du projet</h3>
@@ -1505,7 +1609,7 @@
     <!-- Modale Projet 2 -->
     <div class="project-modal" id="project-modal-2">
         <div class="modal-content">
-            <button class="close-modal">&times;</button>
+            <button class="close-modal">×</button>
             <div class="modal-header">
                 <h2>Mise en place d'un outil de ticketing GLPI sous Linux</h2>
                 <div class="project-meta">
@@ -1515,8 +1619,8 @@
             </div>
             <div class="modal-body">
                 <div class="modal-images">
-                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Capture d'écran du projet">
-                    <img src="https://images.unsplash.com/photo-1544197150-bc3f308a029a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Détails techniques">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1469&q=80" alt="Capture d'écran du projet">
+                    <img src="https://images.unsplash.com/photo-1544197150-bc3f308a029a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Détails techniques">
                 </div>
                 <div class="modal-details">
                     <h3>Description du projet</h3>
@@ -1548,59 +1652,6 @@
                         </a>
                         <a href="#" target="_blank">
                             <i class="fab fa-github"></i> Voir les scripts
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modale Projet 3 -->
-    <div class="project-modal" id="project-modal-3">
-        <div class="modal-content">
-            <button class="close-modal">&times;</button>
-            <div class="modal-header">
-                <h2>Application météo</h2>
-                <div class="project-meta">
-                    <span><i class="far fa-calendar-alt"></i> Mai 2023</span>
-                    <span><i class="fas fa-tag"></i> Développement mobile</span>
-                </div>
-            </div>
-            <div class="modal-body">
-                <div class="modal-images">
-                    <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Capture d'écran du projet">
-                    <img src="https://images.unsplash.com/photo-1603366615917-1fa6dad5c4fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Détails techniques">
-                </div>
-                <div class="modal-details">
-                    <h3>Description du projet</h3>
-                    <p>Application mobile développée avec Flutter permettant d'afficher les prévisions météorologiques en temps réel pour la localisation actuelle ou pour des villes recherchées. L'application intègre des données provenant d'une API météo et offre des fonctionnalités avancées de visualisation.</p>
-                    
-                    <div class="modal-features">
-                        <h4>Fonctionnalités implémentées</h4>
-                        <ul>
-                            <li>Géolocalisation pour obtenir la météo locale</li>
-                            <li>Recherche par ville avec autocomplétion</li>
-                            <li>Affichage des prévisions sur 5 jours</li>
-                            <li>Graphiques des températures et précipitations</li>
-                            <li>Mode sombre/nuit</li>
-                            <li>Notifications pour les alertes météo</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="modal-technologies">
-                        <span class="modal-tech-tag">Flutter</span>
-                        <span class="modal-tech-tag">Dart</span>
-                        <span class="modal-tech-tag">API REST</span>
-                        <span class="modal-tech-tag">Firebase</span>
-                        <span class="modal-tech-tag">Google Maps</span>
-                    </div>
-                    
-                    <div class="modal-links">
-                        <a href="#" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Voir l'application
-                        </a>
-                        <a href="#" target="_blank">
-                            <i class="fab fa-github"></i> Code source
                         </a>
                     </div>
                 </div>
@@ -1654,6 +1705,7 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('animated');
+                        entry.target.style.animationPlayState = 'running';
                     }
                 });
             }, {
@@ -1732,8 +1784,6 @@
             
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                
-                // Ici vous pourriez ajouter le code pour envoyer le formulaire
                 alert('Message envoyé avec succès !');
                 contactForm.reset();
             });
@@ -1743,7 +1793,6 @@
             const projectModals = document.querySelectorAll('.project-modal');
             const closeModalButtons = document.querySelectorAll('.close-modal');
 
-            // Ouvrir la modale correspondante
             viewProjectButtons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -1754,7 +1803,6 @@
                 });
             });
 
-            // Fermer la modale
             closeModalButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     this.closest('.project-modal').classList.remove('active');
@@ -1762,7 +1810,6 @@
                 });
             });
 
-            // Fermer la modale en cliquant à l'extérieur
             projectModals.forEach(modal => {
                 modal.addEventListener('click', function(e) {
                     if (e.target === this) {
@@ -1772,7 +1819,6 @@
                 });
             });
 
-            // Fermer la modale avec la touche ESC
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
                     projectModals.forEach(modal => {
