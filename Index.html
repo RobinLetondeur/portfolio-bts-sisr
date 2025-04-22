@@ -1431,6 +1431,22 @@
                     }
                 });
             }
+
+
+            // Smooth scrolling vers les projets E5
+document.querySelectorAll('.scroll-to-projects').forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
             
             // Vérifier au chargement et au défilement
             window.addEventListener('load', checkScroll);
@@ -1476,22 +1492,22 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="accueil">
-        <div class="hero-content animate slide-up">
-            <h2>Bonjour, bienvenue sur mon Portfolio</h2>
-            <p>Étudiant en BTS SIO (Services Informatiques aux Organisations) option SISR, passionné par l'informatique, vous trouverez l'ensemble des différentes réalisations que j'ai pu effectuer durant mes années de BTS SIO.</p>
-            <div class="hero-btns">
-                <a href="#projets" class="btn btn-primary">
-                    <i class="fas fa-eye"></i> Voir mes projets
-                </a>
-                <a href="#contact" class="btn btn-secondary">
-                    <i class="fas fa-paper-plane"></i> Me contacter
-                </a>
-            </div>
+   <!-- Hero Section -->
+<section class="hero" id="accueil">
+    <div class="hero-content animate slide-up">
+        <h2>Bonjour, bienvenue sur mon Portfolio</h2>
+        <p>Étudiant en BTS SIO (Services Informatiques aux Organisations) option SISR, passionné par l'informatique, vous trouverez l'ensemble des différentes réalisations que j'ai pu effectuer durant mes années de BTS SIO.</p>
+        <div class="hero-btns">
+            <a href="#projets-e5" class="btn btn-primary scroll-to-projects"> 
+                <i class="fas fa-eye"></i> Voir mes projets
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+                <i class="fas fa-paper-plane"></i> Me contacter
+            </a>
         </div>
-        <img src="N.jpg" alt="Développement web" class="hero-image animate slide-up delay-1">
-    </section>
+    </div>
+    <img src="N.jpg" alt="Développement web" class="hero-image animate slide-up delay-1">
+</section>
 
     <!-- À propos Section -->
     <section id="apropos" class="section-spacing animate slide-up delay-2">
