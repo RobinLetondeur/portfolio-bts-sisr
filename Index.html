@@ -158,6 +158,41 @@
             width: 100%;
         }
 
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            min-width: 150px;
+            z-index: 1000;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: var(--text);
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(74, 111, 165, 0.2);
+            color: var(--primary-light);
+        }
+
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -717,7 +752,7 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            font-weight: 500;
+            font in-weight: 500;
         }
 
         .form-control {
@@ -1115,6 +1150,22 @@
                 right: 0;
             }
 
+            .dropdown-menu {
+                position: static;
+                box-shadow: none;
+                background: transparent;
+                width: 100%;
+                text-align: center;
+            }
+
+            .dropdown:hover .dropdown-menu {
+                display: none;
+            }
+
+            .dropdown.active .dropdown-menu {
+                display: block;
+            }
+
             .mobile-menu-btn {
                 display: block;
                 z-index: 1001;
@@ -1181,7 +1232,13 @@
             <div class="nav-links" id="navLinks">
                 <a href="#accueil" class="active">Accueil</a>
                 <a href="#apropos">À propos</a>
-                <a href="#projets">Projets</a>
+                <div class="dropdown">
+                    <a href="#projets">Projets</a>
+                    <div class="dropdown-menu">
+                        <a href="#projets-e4">Projets E4</a>
+                        <a href="#projets-e6">Projets E6</a>
+                    </div>
+                </div>
                 <a href="#certifications">Certifications</a>
                 <a href="#veille">Veille techno</a>
                 <a href="#contact">Contact</a>
@@ -1268,8 +1325,41 @@
         </div>
     </section>
 
-    <!-- Projets Section -->
-    <section id="projets" class="section-spacing animate slide-up delay-3">
+    <!-- Projets E5 Section -->
+    <section id="projets-e4" class="section-spacing animate slide-up delay-3">
+        <div class="section-title">
+            <h2>Mes projets E4</h2>
+        </div>
+        <div class="container">
+            <div class="projects-grid">
+                <!-- Projet E4 Placeholder -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1516321310764-8a238815b999?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Projet E4">
+                    </div>
+                    <div class="project-info">
+                        <h3>Projet E4 - Exemple</h3>
+                        <p>Description placeholder pour un projet E4. Ce projet illustre les compétences acquises dans le cadre de l'épreuve E4 du BTS SIO.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Placeholder</span>
+                            <span class="project-tag">Exemple</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="view-project" data-project="3">
+                                <i class="fas fa-external-link-alt"></i> Voir le projet
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-github"></i> Code source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projets E6 Section -->
+    <section id="projets-e6" class="section-spacing animate slide-up delay-3">
         <div class="section-title">
             <h2>Mes projets E6</h2>
         </div>
@@ -1560,7 +1650,8 @@
                     <h3>Liens rapides</h3>
                     <a href="#accueil">Accueil</a>
                     <a href="#apropos">À propos</a>
-                    <a href="#projets">Projets</a>
+                    <a href="#projets-e4">Projets E4</a>
+                    <a href="#projets-e6">Projets E6</a>
                     <a href="#veille">Veille techno</a>
                     <a href="#contact">Contact</a>
                 </div>
@@ -1686,6 +1777,50 @@
         </div>
     </div>
 
+    <!-- Modale Projet 3 (Placeholder E4) -->
+    <div class="project-modal" id="project-modal-3">
+        <div class="modal-content">
+            <button class="close-modal">×</button>
+            <div class="modal-header">
+                <h2>Projet E4 - Exemple</h2>
+                <div class="project-meta">
+                    <span><i class="far fa-calendar-alt"></i> 2024</span>
+                    <span><i class="fas fa-tag"></i> Projet E4</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-images">
+                    <img src="https://images.unsplash.com/photo-1516321310764-8a238815b999?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Capture d'écran du projet">
+                </div>
+                <div class="modal-details">
+                    <h3>Description du projet</h3>
+                    <p>Ceci est un projet placeholder pour l'épreuve E4. Une description détaillée sera ajoutée ultérieurement.</p>
+                    
+                    <div class="modal-features">
+                        <h4>Fonctionnalités implémentées</h4>
+                        <ul>
+                            <li>Fonctionnalité 1</li>
+                            <li>Fonctionnalité 2</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="modal-technologies">
+                        <span class="modal-tech-tag">Placeholder</span>
+                    </div>
+                    
+                    <div class="modal-links">
+                        <a href="#" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Voir la documentation
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fab fa-github"></i> Voir les scripts
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Gestion du thème
         const themeToggle = document.getElementById('themeToggle');
@@ -1744,11 +1879,23 @@
             // Menu mobile
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const navLinks = document.getElementById('navLinks');
+            const dropdowns = document.querySelectorAll('.dropdown');
             
             mobileMenuBtn.addEventListener('click', function() {
                 navLinks.classList.toggle('active');
                 mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
                     '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+            
+            // Gestion du dropdown dans le menu mobile
+            dropdowns.forEach(dropdown => {
+                const dropdownLink = dropdown.querySelector('a');
+                dropdownLink.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    }
+                });
             });
             
             // Fermer le menu au clic sur un lien
