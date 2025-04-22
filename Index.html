@@ -1309,6 +1309,139 @@
         }
     </style>
 </head>
+        <!-- Scripts JS -->
+    <script>
+        // Fonctionnalité des boutons "Voir le projet"
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélectionner tous les boutons "Voir le projet"
+            const viewProjectButtons = document.querySelectorAll('.view-project');
+            
+            // Ajouter un écouteur d'événement à chaque bouton
+            viewProjectButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const projectId = this.getAttribute('data-project');
+                    const modal = document.getElementById(`project-modal-${projectId}`);
+                    
+                    if (modal) {
+                        modal.classList.add('active');
+                        document.body.style.overflow = 'hidden'; // Empêcher le défilement de la page
+                    }
+                });
+            });
+            
+            // Fermer les modales quand on clique sur le bouton de fermeture
+            const closeButtons = document.querySelectorAll('.close-modal');
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const modal = this.closest('.project-modal');
+                    modal.classList.remove('active');
+                    document.body.style.overflow = ''; // Rétablir le défilement
+                });
+            });
+            
+            // Fermer les modales quand on clique en dehors du contenu
+            const modals = document.querySelectorAll('.project-modal');
+            modals.forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
+                        document.body.style.overflow = ''; // Rétablir le défilement
+                    }
+                });
+            });
+            
+            // Gestion du thème sombre/clair
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    const html = document.documentElement;
+                    const currentTheme = html.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'light' ? null : 'light';
+                    
+                    html.setAttribute('data-theme', newTheme || '');
+                    
+                    // Changer l'icône
+                    const moonIcon = this.querySelector('.fa-moon');
+                    const sunIcon = this.querySelector('.fa-sun');
+                    
+                    if (newTheme === 'light') {
+                        moonIcon.style.display = 'none';
+                        sunIcon.style.display = 'inline-block';
+                    } else {
+                        moonIcon.style.display = 'inline-block';
+                        sunIcon.style.display = 'none';
+                    }
+                    
+                    // Sauvegarder la préférence dans le localStorage
+                    localStorage.setItem('theme', newTheme || 'dark');
+                });
+                
+                // Vérifier le thème au chargement
+                const savedTheme = localStorage.getItem('theme') || 'dark';
+                document.documentElement.setAttribute('data-theme', savedTheme === 'light' ? 'light' : '');
+                
+                // Mettre à jour l'icône
+                const moonIcon = themeToggle.querySelector('.fa-moon');
+                const sunIcon = themeToggle.querySelector('.fa-sun');
+                
+                if (savedTheme === 'light') {
+                    moonIcon.style.display = 'none';
+                    sunIcon.style.display = 'inline-block';
+                } else {
+                    moonIcon.style.display = 'inline-block';
+                    sunIcon.style.display = 'none';
+                }
+            }
+            
+            // Menu mobile
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    this.querySelector('i').classList.toggle('fa-bars');
+                    this.querySelector('i').classList.toggle('fa-times');
+                });
+                
+                // Fermer le menu quand on clique sur un lien
+                const navItems = navLinks.querySelectorAll('a');
+                navItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        if (window.innerWidth <= 768) {
+                            navLinks.classList.remove('active');
+                            mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                            mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+            
+            // Animation au défilement
+            const animateElements = document.querySelectorAll('.animate');
+            
+            function checkScroll() {
+                animateElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 100) {
+                        element.style.opacity = 1;
+                    }
+                });
+            }
+            
+            // Vérifier au chargement et au défilement
+            window.addEventListener('load', checkScroll);
+            window.addEventListener('scroll', checkScroll);
+            
+            // Initial check
+            checkScroll();
+        });
+    </script>
+</body>
+</html>
 <body>
     <!-- Header -->
     <header id="header">
