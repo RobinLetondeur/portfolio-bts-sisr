@@ -127,6 +127,7 @@
         .nav-links {
             display: flex;
             gap: 2rem;
+            align-items: center;
         }
 
         .nav-links a {
@@ -160,6 +161,12 @@
 
         .dropdown {
             position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .dropdown > a {
+            padding: 0.5rem 0;
         }
 
         .dropdown-menu {
@@ -752,7 +759,7 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            font in-weight: 500;
+            font-weight: 500;
         }
 
         .form-control {
@@ -1148,6 +1155,11 @@
 
             .nav-links.active {
                 right: 0;
+            }
+
+            .dropdown {
+                width: 100%;
+                text-align: center;
             }
 
             .dropdown-menu {
