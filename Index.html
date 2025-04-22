@@ -223,7 +223,7 @@
             height: 40px;
             display: flex;
             align-items: center;
-            justify-content: center; 
+            justify-content: center;
             transition: all 0.3s ease;
         }
 
@@ -246,9 +246,9 @@
 
         .hero-content {
             max-width: 800px;
-            text-align: left; /* Alignement à gauche */
-            padding-left: 2rem; /* Marge à gauche pour décaler */
-            margin-right: auto; /* S'assurer que le contenu ne déborde pas à droite */
+            text-align: left;
+            padding-left: 2rem;
+            margin-right: auto;
             z-index: 2;
         }
 
@@ -376,15 +376,15 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            width: 66.67%; /* Aligner avec la taille de l'image */
-            max-width: 400px; /* Limiter la largeur */
-            aspect-ratio: 1 / 1; /* Rapport d'aspect pour rogner proprement */
+            width: 66.67%;
+            max-width: 400px;
+            aspect-ratio: 1 / 1;
         }
 
         .about-image img {
-            width: 100%; /* Remplir le conteneur */
-            height: 100%; /* Remplir le conteneur */
-            object-fit: cover; /* Rogner l'image pour remplir sans déformer */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             display: block;
             transition: transform 0.5s ease;
         }
@@ -659,7 +659,7 @@
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            flex-direction: column; /* Changer en colonne pour placer le formulaire en haut */
+            flex-direction: column;
             gap: 2rem;
             justify-content: center;
         }
@@ -720,25 +720,24 @@
             transform: translateY(-3px);
         }
 
-        /* Light mode adjustments for social links and buttons */
         [data-theme="light"] .social-links a {
-            background: rgba(74, 111, 165, 0.2); /* Fond légèrement plus sombre */
-            color: var(--primary-dark); /* Couleur de l'icône plus foncée */
+            background: rgba(74, 111, 165, 0.2);
+            color: var(--primary-dark);
         }
 
         [data-theme="light"] .social-links a:hover {
-            background: var(--primary); /* Fond bleu au survol */
-            color: white; /* Texte blanc au survol */
+            background: var(--primary);
+            color: white;
         }
 
         [data-theme="light"] .btn-secondary {
-            background: rgba(74, 111, 165, 0.1); /* Fond légèrement plus sombre */
-            color: var(--primary-dark); /* Texte plus foncé */
-            border: 2px solid var(--primary-dark); /* Bordure plus foncée */
+            background: rgba(74, 111, 165, 0.1);
+            color: var(--primary-dark);
+            border: 2px solid var(--primary-dark);
         }
 
         [data-theme="light"] .btn-secondary:hover {
-            background: rgba(74, 111, 165, 0.3); /* Fond plus sombre au survol */
+            background: rgba(74, 111, 165, 0.3);
             color: var(--primary-light);
         }
 
@@ -749,7 +748,7 @@
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            width: 100%; /* S'assurer que le formulaire prend toute la largeur */
+            width: 100%;
         }
 
         .form-group {
@@ -1132,7 +1131,7 @@
             }
 
             .about-image {
-                width: 100%; /* Ajuster pour les petits écrans */
+                width: 100%;
                 max-width: 300px;
             }
         }
@@ -1247,7 +1246,7 @@
                 <div class="dropdown">
                     <a href="#projets">Projets</a>
                     <div class="dropdown-menu">
-                        <a href="#projets-e4">Projets E4</a>
+                        <a href="#projets-e5">Projets E5</a>
                         <a href="#projets-e6">Projets E6</a>
                     </div>
                 </div>
@@ -1338,26 +1337,103 @@
     </section>
 
     <!-- Projets E5 Section -->
-    <section id="projets-e4" class="section-spacing animate slide-up delay-3">
+    <section id="projets-e5" class="section-spacing animate slide-up delay-3">
         <div class="section-title">
-            <h2>Mes projets E4</h2>
+            <h2>Mes projets E5</h2>
         </div>
         <div class="container">
             <div class="projects-grid">
-                <!-- Projet E4 Placeholder -->
+                <!-- Projet 1: Analyse et résolution d'incidents réseau -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1516321310764-8a238815b999?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Projet E4">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Analyse d'incidents réseau">
                     </div>
                     <div class="project-info">
-                        <h3>Projet E4 - Exemple</h3>
-                        <p>Description placeholder pour un projet E4. Ce projet illustre les compétences acquises dans le cadre de l'épreuve E4 du BTS SIO.</p>
+                        <h3>Analyse et résolution d'incidents réseau</h3>
+                        <p>Étude et mise en place d'une méthodologie pour analyser et résoudre les incidents réseau, avec migration des outils de ticketing de GLPI vers FreshService pour une gestion optimisée.</p>
                         <div class="project-tags">
-                            <span class="project-tag">Placeholder</span>
-                            <span class="project-tag">Exemple</span>
+                            <span class="project-tag">GLPI</span>
+                            <span class="project-tag">FreshService</span>
+                            <span class="project-tag">Réseau</span>
+                            <span class="project-tag">Ticketing</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="view-project" data-project="3">
+                                <i class="fas fa-external-link-alt"></i> Voir le projet
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-github"></i> Code source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 2: Scripts PowerShell et SQL -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1516321310764-8a238815b999?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Scripts PowerShell et SQL">
+                    </div>
+                    <div class="project-info">
+                        <h3>Scripts PowerShell et SQL pour gestion de parc</h3>
+                        <p>Développement et optimisation de scripts PowerShell et SQL pour automatiser la gestion quotidienne d'un parc informatique, dans le cadre du système AOS.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PowerShell</span>
+                            <span class="project-tag">SQL</span>
+                            <span class="project-tag">AOS</span>
+                            <span class="project-tag">Automatisation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="view-project" data-project="4">
+                                <i class="fas fa-external-link-alt"></i> Voir le projet
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-github"></i> Code source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 3: Gestion de l’Active Directory -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="ChatGPT Image 7 avr. 2025, 10_01_54.png" alt="Active Directory">
+                    </div>
+                    <div class="project-info">
+                        <h3>Gestion de l’Active Directory</h3>
+                        <p>Administration et optimisation d’un Active Directory sous Windows Server 2022, incluant la gestion des utilisateurs, des groupes, et des stratégies de groupe (GPO).</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Active Directory</span>
+                            <span class="project-tag">Windows Server</span>
+                            <span class="project-tag">GPO</span>
+                            <span class="project-tag">PowerShell</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="view-project" data-project="5">
+                                <i class="fas fa-external-link-alt"></i> Voir le projet
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-github"></i> Code source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 4: Enrôlement PDA pour boutique -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Enrôlement PDA">
+                    </div>
+                    <div class="project-info">
+                        <h3>Enrôlement PDA pour boutique</h3>
+                        <p>Mise en place d’une solution d’enrôlement et de gestion des PDA pour une boutique, assurant la configuration sécurisée et l’intégration avec les systèmes existants.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PDA</span>
+                            <span class="project-tag">MDM</span>
+                            <span class="project-tag">Sécurité</span>
+                            <span class="project-tag">Intégration</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="view-project" data-project="6">
                                 <i class="fas fa-external-link-alt"></i> Voir le projet
                             </a>
                             <a href="#">
@@ -1662,7 +1738,7 @@
                     <h3>Liens rapides</h3>
                     <a href="#accueil">Accueil</a>
                     <a href="#apropos">À propos</a>
-                    <a href="#projets-e4">Projets E4</a>
+                    <a href="#projets-e5">Projets E5</a>
                     <a href="#projets-e6">Projets E6</a>
                     <a href="#veille">Veille techno</a>
                     <a href="#contact">Contact</a>
@@ -1683,7 +1759,7 @@
     </footer>
 
     <!-- Modales des projets -->
-    <!-- Modale Projet 1 -->
+    <!-- Modale Projet 1 (E6: Active Directory) -->
     <div class="project-modal" id="project-modal-1">
         <div class="modal-content">
             <button class="close-modal">×</button>
@@ -1736,7 +1812,7 @@
         </div>
     </div>
 
-    <!-- Modale Projet 2 -->
+    <!-- Modale Projet 2 (E6: GLPI Ticketing) -->
     <div class="project-modal" id="project-modal-2">
         <div class="modal-content">
             <button class="close-modal">×</button>
@@ -1789,35 +1865,43 @@
         </div>
     </div>
 
-    <!-- Modale Projet 3 (Placeholder E4) -->
+    <!-- Modale Projet 3 (E5: Analyse et résolution d'incidents réseau) -->
     <div class="project-modal" id="project-modal-3">
         <div class="modal-content">
             <button class="close-modal">×</button>
             <div class="modal-header">
-                <h2>Projet E4 - Exemple</h2>
+                <h2>Analyse et résolution d'incidents réseau</h2>
                 <div class="project-meta">
                     <span><i class="far fa-calendar-alt"></i> 2024</span>
-                    <span><i class="fas fa-tag"></i> Projet E4</span>
+                    <span><i class="fas fa-tag"></i> Gestion des incidents</span>
                 </div>
             </div>
             <div class="modal-body">
                 <div class="modal-images">
-                    <img src="https://images.unsplash.com/photo-1516321310764-8a238815b999?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Capture d'écran du projet">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Capture d'écran du projet">
+                    <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Détails techniques">
                 </div>
                 <div class="modal-details">
                     <h3>Description du projet</h3>
-                    <p>Ceci est un projet placeholder pour l'épreuve E4. Une description détaillée sera ajoutée ultérieurement.</p>
+                    <p>Ce projet visait à établir une méthodologie efficace pour l’analyse et la résolution d’incidents réseau, en migrant les outils de ticketing de GLPI vers FreshService. L’objectif était d’améliorer le suivi, la priorisation et la résolution des incidents tout en optimisant l’expérience utilisateur.</p>
                     
                     <div class="modal-features">
                         <h4>Fonctionnalités implémentées</h4>
                         <ul>
-                            <li>Fonctionnalité 1</li>
-                            <li>Fonctionnalité 2</li>
+                            <li>Analyse des incidents réseau avec outils de monitoring</li>
+                            <li>Migration des données de GLPI vers FreshService</li>
+                            <li>Configuration de workflows automatisés dans FreshService</li>
+                            <li>Formation des équipes sur l’utilisation de FreshService</li>
+                            <li>Mise en place de rapports personnalisés</li>
+                            <li>Intégration avec des outils de diagnostic réseau</li>
                         </ul>
                     </div>
                     
                     <div class="modal-technologies">
-                        <span class="modal-tech-tag">Placeholder</span>
+                        <span class="modal-tech-tag">GLPI</span>
+                        <span class="modal-tech-tag">FreshService</span>
+                        <span class="modal-tech-tag">Réseau</span>
+                        <span class="modal-tech-tag">Monitoring</span>
                     </div>
                     
                     <div class="modal-links">
@@ -1833,189 +1917,51 @@
         </div>
     </div>
 
-    <script>
-        // Gestion du thème
-        const themeToggle = document.getElementById('themeToggle');
-        const moonIcon = themeToggle.querySelector('.fa-moon');
-        const sunIcon = themeToggle.querySelector('.fa-sun');
-        
-        // Vérifier le thème stocké ou la préférence système
-        const currentTheme = localStorage.getItem('theme') || 
-                           (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-        
-        // Appliquer le thème au chargement
-        if (currentTheme === 'light') {
-            document.documentElement.setAttribute('data-theme', 'light');
-            moonIcon.style.display = 'none';
-            sunIcon.style.display = 'block';
-        } else {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            moonIcon.style.display = 'block';
-            sunIcon.style.display = 'none';
-        }
-        
-        // Basculer entre les thèmes
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            
-            if (currentTheme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-                moonIcon.style.display = 'none';
-                sunIcon.style.display = 'block';
-            } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-                moonIcon.style.display = 'block';
-                sunIcon.style.display = 'none';
-            }
-        });
-
-        // Animation au scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const animateElements = document.querySelectorAll('.animate');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animated');
-                        entry.target.style.animationPlayState = 'running';
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-            
-            animateElements.forEach(el => observer.observe(el));
-            
-            // Menu mobile
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            const navLinks = document.getElementById('navLinks');
-            const dropdowns = document.querySelectorAll('.dropdown');
-            
-            mobileMenuBtn.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
-                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-            });
-            
-            // Gestion du dropdown dans le menu mobile
-            dropdowns.forEach(dropdown => {
-                const dropdownLink = dropdown.querySelector('a');
-                dropdownLink.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 768) {
-                        e.preventDefault();
-                        dropdown.classList.toggle('active');
-                    }
-                });
-            });
-            
-            // Fermer le menu au clic sur un lien
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', function() {
-                    if (navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    }
-                });
-            });
-            
-            // Header scroll effect
-            const header = document.getElementById('header');
-            let lastScroll = 0;
-            
-            window.addEventListener('scroll', function() {
-                const currentScroll = window.pageYOffset;
-                
-                if (currentScroll <= 0) {
-                    header.classList.remove('hidden');
-                    return;
-                }
-                
-                if (currentScroll > lastScroll && !header.classList.contains('hidden')) {
-                    header.classList.add('hidden');
-                } else if (currentScroll < lastScroll && header.classList.contains('hidden')) {
-                    header.classList.remove('hidden');
-                }
-                
-                lastScroll = currentScroll;
-            });
-            
-            // Active link highlight
-            const sections = document.querySelectorAll('section');
-            const navItems = document.querySelectorAll('.nav-links a');
-            
-            window.addEventListener('scroll', function() {
-                let current = '';
-                
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
+    <!-- Modale Projet 4 (E5: Scripts PowerShell et SQL) -->
+    <div class="project-modal" id="project-modal-4">
+        <div class="modal-content">
+            <button class="close-modal">×</button>
+            <div class="modal-header">
+                <h2>Scripts PowerShell et SQL pour gestion de parc</h2>
+                <div class="project-meta">
+                    <span><i class="far fa-calendar-alt"></i> 2024</span>
+                    <span><i class="fas fa-tag"></i> Automatisation</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-images">
+                    <img src="https://images.unsplash.com/photo-1516321310764-8a238815b999?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Capture d'écran du projet">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Détails techniques">
+                </div>
+                <div class="modal-details">
+                    <h3>Description du projet</h3>
+                    <p>Ce projet consistait à développer et optimiser des scripts PowerShell et SQL pour automatiser la gestion quotidienne d’un parc informatique dans le cadre du système AOS. Les scripts ont permis de réduire les tâches manuelles et d’améliorer l’efficacité des opérations.</p>
                     
-                    if (pageYOffset >= (sectionTop - 300)) {
-                        current = section.getAttribute('id');
-                    }
-                });
-                
-                navItems.forEach(item => {
-                    item.classList.remove('active');
-                    if (item.getAttribute('href') === `#${current}`) {
-                        item.classList.add('active');
-                    }
-                });
-            });
-            
-            // Form submission
-            const contactForm = document.getElementById('contactForm');
-            
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Message envoyé avec succès !');
-                contactForm.reset();
-            });
-
-            // Gestion des modales de projet
-            const viewProjectButtons = document.querySelectorAll('.view-project');
-            const projectModals = document.querySelectorAll('.project-modal');
-            const closeModalButtons = document.querySelectorAll('.close-modal');
-
-            viewProjectButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const projectId = this.getAttribute('data-project');
-                    const modal = document.getElementById(`project-modal-${projectId}`);
-                    modal.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                });
-            });
-
-            closeModalButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    this.closest('.project-modal').classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                });
-            });
-
-            projectModals.forEach(modal => {
-                modal.addEventListener('click', function(e) {
-                    if (e.target === this) {
-                        this.classList.remove('active');
-                        document.body.style.overflow = 'auto';
-                    }
-                });
-            });
-
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    projectModals.forEach(modal => {
-                        if (modal.classList.contains('active')) {
-                            modal.classList.remove('active');
-                            document.body.style.overflow = 'auto';
-                        }
-                    });
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+                    <div class="modal-features">
+                        <h4>Fonctionnalités implémentées</h4>
+                        <ul>
+                            <li>Automatisation de la gestion des utilisateurs dans AOS</li>
+                            <li>Scripts SQL pour générer des rapports sur l’état du parc</li>
+                            <li>Scripts PowerShell pour la gestion des mises à jour</li>
+                            <li>Surveillance des performances des serveurs</li>
+                            <li>Nettoyage automatisé des fichiers temporaires</li>
+                            <li>Intégration avec des bases de données SQL Server</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="modal-technologies">
+                        <span class="modal-tech-tag">PowerShell</span>
+                        <span class="modal-tech-tag">SQL</span>
+                        <span class="modal-tech-tag">AOS</span>
+                        <span class="modal-tech-tag">SQL Server</span>
+                    </div>
+                    
+                    <div class="modal-links">
+                        <a href="#" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Voir la documentation
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fab fa-github"></i> Voir les scripts
+                        </a>
+                    </div>
+                </div>
