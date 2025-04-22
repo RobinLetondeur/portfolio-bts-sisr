@@ -432,6 +432,83 @@
             border: 1px solid rgba(74, 111, 165, 0.3);
         }
 
+        /* Section Compétences */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(74, 111, 165, 0.2);
+        }
+
+        .skill-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .skill-icon {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover .skill-icon {
+            transform: scale(1.2);
+        }
+
+        .progress-bar {
+            height: 8px;
+            border-radius: 999px;
+            background-color: rgba(74, 111, 165, 0.2);
+            overflow: hidden;
+        }
+
+        .progress-value {
+            height: 100%;
+            background-color: var(--primary);
+            border-radius: 999px;
+            transition: width 1s ease;
+        }
+
+        .skill-card:hover .progress-value {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+        .skill-card ul li {
+            font-size: 0.95rem;
+            color: var(--text);
+            opacity: 0.9;
+        }
+
+        .skill-card ul li span:first-child {
+            font-weight: 500;
+        }
+
+        .skill-card ul li span:last-child {
+            font-weight: 600;
+            color: var(--primary-light);
+        }
+
         /* Section Projets */
         .projects-grid {
             display: flex;
@@ -1134,6 +1211,10 @@
                 width: 100%;
                 max-width: 300px;
             }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1243,6 +1324,7 @@
             <div class="nav-links" id="navLinks">
                 <a href="#accueil" class="active">Accueil</a>
                 <a href="#apropos">À propos</a>
+                <a href="#skills">Compétences</a>
                 <div class="dropdown">
                     <a href="#projets">Projets</a>
                     <div class="dropdown-menu">
@@ -1294,6 +1376,7 @@
                     <p>Mon objectif est de continuer à développer mes compétences en gestion d'infrastructures et en sécurité des systèmes d'information.</p>
                     
                     <div class="skills">
+                        <h4 style="margin-bottom: 1rem; color: var(--primary-light);">Domaines d'expertise</h4>
                         <div class="skill-category">
                             <h4>ERP</h4>
                             <div class="skill-tags">
@@ -1331,6 +1414,197 @@
                     <a href="#" class="btn btn-primary" style="margin-top: 1.5rem;">
                         <i class="fas fa-download"></i> Télécharger mon CV
                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compétences Section -->
+    <section id="skills" class="section-spacing animate slide-up delay-3">
+        <div class="section-title">
+            <h2>Mes compétences</h2>
+        </div>
+        <div class="container">
+            <div class="skills-grid">
+                <!-- Compétences ERP -->
+                <div class="skill-card">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-database skill-icon" style="color: var(--primary);"></i>
+                        <h3>ERP</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>On-Premise</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" style="width: 90%;"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>Reporting</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" style="width: 85%;"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>Workflow</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" style="width: 80%;"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>KPI</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" style="width: 75%;"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Compétences Data Exchanger -->
+                <div class="skill-card">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-exchange-alt skill-icon" style="color: var(--primary);"></i>
+                        <h3>Data Exchanger</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>Sécurité</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" style="width: 85%;"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>Échange et traçabilité</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" style="width: 80%;"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>API</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" style="width: 70%;"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Compétences Outils & Méthodes -->
+                <div class="skill-card">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-tools skill-icon" style="color: var(--primary);"></i>
+                        <h3>Outils & Méthodes</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>Windows Server</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" style="width: 90%;"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>Linux</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" style="width: 80%;"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>PowerShell</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" style="width: 75%;"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>GLPI</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" style="width: 85%;"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Compétences Cybersécurité -->
+                <div class="skill-card">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-shield-alt skill-icon" style="color: var(--primary);"></i>
+                        <h3>Cybersécurité</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>Sécurité réseau</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" style="width: 80%;"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>Cryptographie</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" style="width: 75%;"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between mb-1">
+                                <span>Gestion des vulnérabilités</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" style="width: 70%;"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Autres compétences -->
+            <div class="mt-12">
+                <h3 class="text-xl font-semibold mb-6">Autres compétences techniques</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="skill-tag">Active Directory</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Azure</span>
+                    <span class="skill-tag">DNS</span>
+                    <span class="skill-tag">DHCP</span>
+                    <span class="skill-tag">GPO</span>
+                    <span class="skill-tag">FreshService</span>
+                    <span class="skill-tag">MDM</span>
                 </div>
             </div>
         </div>
@@ -1738,6 +2012,7 @@
                     <h3>Liens rapides</h3>
                     <a href="#accueil">Accueil</a>
                     <a href="#apropos">À propos</a>
+                    <a href="#skills">Compétences</a>
                     <a href="#projets-e5">Projets E5</a>
                     <a href="#projets-e6">Projets E6</a>
                     <a href="#veille">Veille techno</a>
