@@ -1,3 +1,5 @@
+Porto tableau graphique 
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -1115,37 +1117,6 @@
             transform: translateY(-3px);
         }
 
-        @media (max-width: 992px) {
-            .modal-body {
-                grid-template-columns: 1fr;
-            }
-
-            .modal-images {
-                order: 2;
-            }
-
-            .modal-details {
-                order: 1;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .modal-content {
-                padding: 1.5rem;
-            }
-
-            .modal-header h2 {
-                font-size: 1.5rem;
-            }
-
-            .modal-links {
-                flex-direction: column;
-            }
-        }
-    </style>
-</head>
-<body>
-
         /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -1340,196 +1311,6 @@
         }
     </style>
 </head>
-        <!-- Scripts JS -->
-    <script>
-        // Fonctionnalité des boutons "Voir le projet"
-        document.addEventListener('DOMContentLoaded', function() {
-        const viewProjectButtons = document.querySelectorAll('.view-project');   
-             viewProjectButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const projectId = this.getAttribute('data-project');
-                    const modal = document.getElementById(`project-modal-${projectId}`);
-                    
-                    if (modal) {
-                        modal.classList.add('active');
-                        document.body.style.overflow = 'hidden';
-                    }
-                });
-            });
-
-              const closeButtons = document.querySelectorAll('.close-modal');
-            closeButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const modal = this.closest('.project-modal');
-                    modal.classList.remove('active');
-                    document.body.style.overflow = '';
-                });
-            });
-
-                        const modals = document.querySelectorAll('.project-modal');
-            modals.forEach(modal => {
-                modal.addEventListener('click', function(e) {
-                    if (e.target === this) {
-                        this.classList.remove('active');
-                        document.body.style.overflow = '';
-                    }
-                });
-            });
-
-            const closeButtons = document.querySelectorAll('.close-modal');
-            closeButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const modal = this.closest('.project-modal');
-                    modal.classList.remove('active');
-                    document.body.style.overflow = '';
-                });
-            });  
-            // Sélectionner tous les boutons "Voir le projet"
-            const viewProjectButtons = document.querySelectorAll('.view-project');
-            
-            // Ajouter un écouteur d'événement à chaque bouton
-            viewProjectButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const projectId = this.getAttribute('data-project');
-                    const modal = document.getElementById(`project-modal-${projectId}`);
-                    
-                    if (modal) {
-                        modal.classList.add('active');
-                        document.body.style.overflow = 'hidden'; // Empêcher le défilement de la page
-                    }
-                });
-            });
-            
-            // Fermer les modales quand on clique sur le bouton de fermeture
-            const closeButtons = document.querySelectorAll('.close-modal');
-            closeButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const modal = this.closest('.project-modal');
-                    modal.classList.remove('active');
-                    document.body.style.overflow = ''; // Rétablir le défilement
-                });
-            });
-            
-            // Fermer les modales quand on clique en dehors du contenu
-            const modals = document.querySelectorAll('.project-modal');
-            modals.forEach(modal => {
-                modal.addEventListener('click', function(e) {
-                    if (e.target === this) {
-                        this.classList.remove('active');
-                        document.body.style.overflow = ''; // Rétablir le défilement
-                    }
-                });
-            });
-            
-            // Gestion du thème sombre/clair
-            const themeToggle = document.getElementById('themeToggle');
-            if (themeToggle) {
-                themeToggle.addEventListener('click', function() {
-                    const html = document.documentElement;
-                    const currentTheme = html.getAttribute('data-theme');
-                    const newTheme = currentTheme === 'light' ? null : 'light';
-                    
-                    html.setAttribute('data-theme', newTheme || '');
-                    
-                    // Changer l'icône
-                    const moonIcon = this.querySelector('.fa-moon');
-                    const sunIcon = this.querySelector('.fa-sun');
-                    
-                    if (newTheme === 'light') {
-                        moonIcon.style.display = 'none';
-                        sunIcon.style.display = 'inline-block';
-                    } else {
-                        moonIcon.style.display = 'inline-block';
-                        sunIcon.style.display = 'none';
-                    }
-                    
-                    // Sauvegarder la préférence dans le localStorage
-                    localStorage.setItem('theme', newTheme || 'dark');
-                });
-                
-                // Vérifier le thème au chargement
-                const savedTheme = localStorage.getItem('theme') || 'dark';
-                document.documentElement.setAttribute('data-theme', savedTheme === 'light' ? 'light' : '');
-                
-                // Mettre à jour l'icône
-                const moonIcon = themeToggle.querySelector('.fa-moon');
-                const sunIcon = themeToggle.querySelector('.fa-sun');
-                
-                if (savedTheme === 'light') {
-                    moonIcon.style.display = 'none';
-                    sunIcon.style.display = 'inline-block';
-                } else {
-                    moonIcon.style.display = 'inline-block';
-                    sunIcon.style.display = 'none';
-                }
-            }
-            
-            // Menu mobile
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            const navLinks = document.getElementById('navLinks');
-            
-            if (mobileMenuBtn && navLinks) {
-                mobileMenuBtn.addEventListener('click', function() {
-                    navLinks.classList.toggle('active');
-                    this.querySelector('i').classList.toggle('fa-bars');
-                    this.querySelector('i').classList.toggle('fa-times');
-                });
-                
-                // Fermer le menu quand on clique sur un lien
-                const navItems = navLinks.querySelectorAll('a');
-                navItems.forEach(item => {
-                    item.addEventListener('click', function() {
-                        if (window.innerWidth <= 768) {
-                            navLinks.classList.remove('active');
-                            mobileMenuBtn.querySelector('i').classList.remove('fa-times');
-                            mobileMenuBtn.querySelector('i').classList.add('fa-bars');
-                        }
-                    });
-                });
-            }
-            
-            // Animation au défilement
-            const animateElements = document.querySelectorAll('.animate');
-            
-            function checkScroll() {
-                animateElements.forEach(element => {
-                    const elementTop = element.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (elementTop < windowHeight - 100) {
-                        element.style.opacity = 1;
-                    }
-                });
-            }
-
-
-            // Smooth scrolling vers les projets E5
-document.querySelectorAll('.scroll-to-projects').forEach(button => {
-    button.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-        if (targetSection) {
-            targetSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-            
-            // Vérifier au chargement et au défilement
-            window.addEventListener('load', checkScroll);
-            window.addEventListener('scroll', checkScroll);
-            
-            // Initial check
-            checkScroll();
-        });
-    </script>
-</body>
-</html>
 <body>
     <!-- Header -->
     <header id="header">
@@ -1564,22 +1345,22 @@ document.querySelectorAll('.scroll-to-projects').forEach(button => {
         </nav>
     </header>
 
-   <!-- Hero Section -->
-<section class="hero" id="accueil">
-    <div class="hero-content animate slide-up">
-        <h2>Bonjour, bienvenue sur mon Portfolio</h2>
-        <p>Étudiant en BTS SIO (Services Informatiques aux Organisations) option SISR, passionné par l'informatique, vous trouverez l'ensemble des différentes réalisations que j'ai pu effectuer durant mes années de BTS SIO.</p>
-        <div class="hero-btns">
-            <a href="#projets-e5" class="btn btn-primary scroll-to-projects"> 
-                <i class="fas fa-eye"></i> Voir mes projets
-            </a>
-            <a href="#contact" class="btn btn-secondary">
-                <i class="fas fa-paper-plane"></i> Me contacter
-            </a>
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="hero-content animate slide-up">
+            <h2>Bonjour, bienvenue sur mon Portfolio</h2>
+            <p>Étudiant en BTS SIO (Services Informatiques aux Organisations) option SISR, passionné par l'informatique, vous trouverez l'ensemble des différentes réalisations que j'ai pu effectuer durant mes années de BTS SIO.</p>
+            <div class="hero-btns">
+                <a href="#projets" class="btn btn-primary">
+                    <i class="fas fa-eye"></i> Voir mes projets
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-paper-plane"></i> Me contacter
+                </a>
+            </div>
         </div>
-    </div>
-    <img src="N.jpg" alt="Développement web" class="hero-image animate slide-up delay-1">
-</section>
+        <img src="N.jpg" alt="Développement web" class="hero-image animate slide-up delay-1">
+    </section>
 
     <!-- À propos Section -->
     <section id="apropos" class="section-spacing animate slide-up delay-2">
@@ -1893,52 +1674,53 @@ document.querySelectorAll('.scroll-to-projects').forEach(button => {
                     <div class="project-image">
                         <img src="ChatGPT Image 7 avr. 2025, 10_01_54.png" alt="Active Directory">
                     </div>
-                     <div class="project-info">
-                            <h3>Gestion de l’Active Directory</h3>
-                            <p>Administration et optimisation d’un Active Directory sous Windows Server 2022, incluant la gestion des utilisateurs, des groupes, et des stratégies de groupe (GPO).</p>
-                            <div class="project-tags">
-                                <span class="project-tag">Active Directory</span>
-                                <span class="project-tag">Windows Server</span>
-                                <span class="project-tag">GPO</span>
-                                <span class="project-tag">PowerShell</span>
-                            </div>
-                            <div class="project-links">
-            <a href="#" class="view-project" data-project="5">
-                <i class="fas fa-external-link-alt"></i> Voir le projet
-            </a>
-            <a href="#">
-                <i class="fab fa-github"></i> Code source
-            </a>
-        </div>
-    </div>
-</div>
-
-                    <!-- Projet 4: Enrôlement PDA pour boutique -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Enrôlement PDA">
+                    <div class="project-info">
+                        <h3>Gestion de l’Active Directory</h3>
+                        <p>Administration et optimisation d’un Active Directory sous Windows Server 2022, incluant la gestion des utilisateurs, des groupes, et des stratégies de groupe (GPO).</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Active Directory</span>
+                            <span class="project-tag">Windows Server</span>
+                            <span class="project-tag">GPO</span>
+                            <span class="project-tag">PowerShell</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="view-project" data-project="5">
+                                <i class="fas fa-external-link-alt"></i> Voir le projet
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-github"></i> Code source
+                            </a>
+                        </div>
                     </div>
-                        <div class="project-info">
+                </div>
+
+                <!-- Projet 4: Enrôlement PDA pour boutique -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Enrôlement PDA">
+                    </div>
+                    <div class="project-info">
                         <h3>Enrôlement PDA pour boutique</h3>
                         <p>Mise en place d’une solution d’enrôlement et de gestion des PDA pour une boutique, assurant la configuration sécurisée et l’intégration avec les systèmes existants.</p>
-                            <div class="project-tags">
+                        <div class="project-tags">
                             <span class="project-tag">PDA</span>
                             <span class="project-tag">MDM</span>
                             <span class="project-tag">Sécurité</span>
                             <span class="project-tag">Intégration</span>
                         </div>
                         <div class="project-links">
-            <a href="#" class="view-project" data-project="6">
-                <i class="fas fa-external-link-alt"></i> Voir le projet
-            </a>
-            <a href="#">
-                <i class="fab fa-github"></i> Code source
-            </a>
+                            <a href="#" class="view-project" data-project="6">
+                                <i class="fas fa-external-link-alt"></i> Voir le projet
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-github"></i> Code source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-        </section>
+    </section>
 
     <!-- Projets E6 Section -->
     <section id="projets-e6" class="section-spacing animate slide-up delay-3">
@@ -2272,7 +2054,7 @@ document.querySelectorAll('.scroll-to-projects').forEach(button => {
                 </div>
                 <div class="modal-details">
                     <h3>Description du projet</h3>
-                    <p>Ce projet consistait à mettre en place un Active Directory complet sous Windows Server 2022 pour une entreprise fictive de 50 employés.</p>
+                    <p>Ce projet consistait à mettre en place un Active Directory complet sous Windows Server 2022 pour une entreprise fictive de 50 employés. L'objectif était de centraliser la gestion des utilisateurs, des ordinateurs et des politiques de sécurité.</p>
                     
                     <div class="modal-features">
                         <h4>Fonctionnalités implémentées</h4>
@@ -2325,7 +2107,7 @@ document.querySelectorAll('.scroll-to-projects').forEach(button => {
                 </div>
                 <div class="modal-details">
                     <h3>Description du projet</h3>
-                    <p>Implémentation d'une solution complète de ticketing et de gestion de parc informatique basée sur GLPI.</p>
+                    <p>Implémentation d'une solution complète de ticketing et de gestion de parc informatique basée sur GLPI (Gestionnaire Libre de Parc Informatique) sous Linux CentOS. Le système permet de gérer les incidents, les demandes et l'inventaire du matériel.</p>
                     
                     <div class="modal-features">
                         <h4>Fonctionnalités implémentées</h4>
@@ -2345,6 +2127,58 @@ document.querySelectorAll('.scroll-to-projects').forEach(button => {
                         <span class="modal-tech-tag">MySQL</span>
                         <span class="modal-tech-tag">Apache</span>
                         <span class="modal-tech-tag">PHP</span>
+                    </div>
+                    
+                    <div class="modal-links">
+                        <a href="#" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Voir la documentation
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fab fa-github"></i> Voir les scripts
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale Projet 3 (E5: Analyse et résolution d'incidents réseau) -->
+    <div class="project-modal" id="project-modal-3">
+        <div class="modal-content">
+            <button class="close-modal">×</button>
+            <div class="modal-header">
+                <h2>Analyse et résolution d'incidents réseau</h2>
+                <div class="project-meta">
+                    <span><i class="far fa-calendar-alt"></i> 2024</span>
+                    <span><i class="fas fa-tag"></i> Gestion des incidents</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-images">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Capture d'écran du projet">
+                    <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Détails techniques">
+                </div>
+                <div class="modal-details">
+                    <h3>Description du projet</h3>
+                    <p>Ce projet visait à établir une méthodologie efficace pour l’analyse et la résolution d’incidents réseau, en migrant les outils de ticketing de GLPI vers FreshService. L’objectif était d’améliorer le suivi, la priorisation et la résolution des incidents tout en optimisant l’expérience utilisateur.</p>
+                    
+                    <div class="modal-features">
+                        <h4>Fonctionnalités implémentées</h4>
+                        <ul>
+                            <li>Analyse des incidents réseau avec outils de monitoring</li>
+                            <li>Migration des données de GLPI vers FreshService</li>
+                            <li>Configuration de workflows automatisés dans FreshService</li>
+                            <li>Formation des équipes sur l’utilisation de FreshService</li>
+                            <li>Mise en place de rapports personnalisés</li>
+                            <li>Intégration avec des outils de diagnostic réseau</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="modal-technologies">
+                        <span class="modal-tech-tag">GLPI</span>
+                        <span class="modal-tech-tag">FreshService</span>
+                        <span class="modal-tech-tag">Réseau</span>
+                        <span class="modal-tech-tag">Monitoring</span>
                     </div>
                     
                     <div class="modal-links">
@@ -2408,114 +2242,3 @@ document.querySelectorAll('.scroll-to-projects').forEach(button => {
                         </a>
                     </div>
                 </div>
-                <div class="project-links">
-    <a href="#" class="view-project" data-project="6"> <!-- data-project correspond à l'ID de la modale -->
-        <i class="fas fa-external-link-alt"></i> Voir le projet
-    </a>
-    <a href="#">
-        <i class="fab fa-github"></i> Code source
-    </a>
-</div>
-                
-<!-- Modale Projet 5 (E5: Gestion Active Directory) -->
-<div class="project-modal" id="project-modal-5">
-    <div class="modal-content">
-        <button class="close-modal">×</button>
-        <div class="modal-header">
-            <h2>Gestion de l'Active Directory</h2>
-            <div class="project-meta">
-                <span><i class="far fa-calendar-alt"></i> 2024</span>
-                <span><i class="fas fa-tag"></i> Administration système</span>
-            </div>
-        </div>
-        <div class="modal-body">
-            <div class="modal-images">
-                <img src="ChatGPT Image 7 avr. 2025, 10_01_54.png" alt="Capture Active Directory">
-                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Détails techniques">
-            </div>
-            <div class="modal-details">
-                <h3>Description du projet</h3>
-                <p>Administration et optimisation d'un Active Directory sous Windows Server 2022, incluant la gestion des utilisateurs, des groupes, et des stratégies de groupe (GPO).</p>
-                
-                <div class="modal-features">
-                    <h4>Fonctionnalités implémentées</h4>
-                    <ul>
-                        <li>Création et gestion des utilisateurs et groupes</li>
-                        <li>Mise en place des stratégies de groupe (GPO)</li>
-                        <li>Délégation des permissions administratives</li>
-                        <li>Automatisation des tâches avec PowerShell</li>
-                        <li>Sécurisation de l'annuaire Active Directory</li>
-                    </ul>
-                </div>
-                
-                <div class="modal-technologies">
-                    <span class="modal-tech-tag">Windows Server 2022</span>
-                    <span class="modal-tech-tag">Active Directory</span>
-                    <span class="modal-tech-tag">GPO</span>
-                    <span class="modal-tech-tag">PowerShell</span>
-                    <span class="modal-tech-tag">Sécurité</span>
-                </div>
-                
-                <div class="modal-links">
-                    <a href="#" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> Voir la documentation
-                    </a>
-                    <a href="#" target="_blank">
-                        <i class="fab fa-github"></i> Voir les scripts
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modale Projet 6 (E5: Enrôlement PDA) -->
-<div class="project-modal" id="project-modal-6">
-    <div class="modal-content">
-        <button class="close-modal">×</button>
-        <div class="modal-header">
-            <h2>Enrôlement PDA pour boutique</h2>
-            <div class="project-meta">
-                <span><i class="far fa-calendar-alt"></i> 2024</span>
-                <span><i class="fas fa-tag"></i> Gestion de parc mobile</span>
-            </div>
-        </div>
-        <div class="modal-body">
-            <div class="modal-images">
-                <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="PDA en boutique">
-                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Processus d'enrôlement">
-            </div>
-            <div class="modal-details">
-                <h3>Description du projet</h3>
-                <p>Mise en place d'une solution d'enrôlement et de gestion des PDA pour une boutique, assurant la configuration sécurisée et l'intégration avec les systèmes existants.</p>
-                
-                <div class="modal-features">
-                    <h4>Fonctionnalités implémentées</h4>
-                    <ul>
-                        <li>Configuration automatisée des PDA</li>
-                        <li>Intégration avec le système de gestion de stock</li>
-                        <li>Mise en place de politiques de sécurité</li>
-                        <li>Gestion centralisée via solution MDM</li>
-                        <li>Formation du personnel</li>
-                    </ul>
-                </div>
-                
-                <div class="modal-technologies">
-                    <span class="modal-tech-tag">Mobile Device Management</span>
-                    <span class="modal-tech-tag">Android Enterprise</span>
-                    <span class="modal-tech-tag">Sécurité mobile</span>
-                    <span class="modal-tech-tag">Intégration système</span>
-                </div>
-                
-                <div class="modal-links">
-                    <a href="#" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> Voir la documentation
-                    </a>
-                    <a href="#" target="_blank">
-                        <i class="fab fa-github"></i> Voir les scripts
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
