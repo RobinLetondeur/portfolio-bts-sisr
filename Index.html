@@ -1115,6 +1115,37 @@
             transform: translateY(-3px);
         }
 
+        @media (max-width: 992px) {
+            .modal-body {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-images {
+                order: 2;
+            }
+
+            .modal-details {
+                order: 1;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .modal-content {
+                padding: 1.5rem;
+            }
+
+            .modal-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .modal-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
         /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -1313,6 +1344,47 @@
     <script>
         // Fonctionnalité des boutons "Voir le projet"
         document.addEventListener('DOMContentLoaded', function() {
+        const viewProjectButtons = document.querySelectorAll('.view-project');   
+             viewProjectButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const projectId = this.getAttribute('data-project');
+                    const modal = document.getElementById(`project-modal-${projectId}`);
+                    
+                    if (modal) {
+                        modal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+
+              const closeButtons = document.querySelectorAll('.close-modal');
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const modal = this.closest('.project-modal');
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+
+                        const modals = document.querySelectorAll('.project-modal');
+            modals.forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+
+            const closeButtons = document.querySelectorAll('.close-modal');
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const modal = this.closest('.project-modal');
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });  
             // Sélectionner tous les boutons "Voir le projet"
             const viewProjectButtons = document.querySelectorAll('.view-project');
             
@@ -2200,7 +2272,7 @@ document.querySelectorAll('.scroll-to-projects').forEach(button => {
                 </div>
                 <div class="modal-details">
                     <h3>Description du projet</h3>
-                    <p>Ce projet consistait à mettre en place un Active Directory complet sous Windows Server 2022 pour une entreprise fictive de 50 employés. L'objectif était de centraliser la gestion des utilisateurs, des ordinateurs et des politiques de sécurité.</p>
+                    <p>Ce projet consistait à mettre en place un Active Directory complet sous Windows Server 2022 pour une entreprise fictive de 50 employés.</p>
                     
                     <div class="modal-features">
                         <h4>Fonctionnalités implémentées</h4>
@@ -2253,7 +2325,7 @@ document.querySelectorAll('.scroll-to-projects').forEach(button => {
                 </div>
                 <div class="modal-details">
                     <h3>Description du projet</h3>
-                    <p>Implémentation d'une solution complète de ticketing et de gestion de parc informatique basée sur GLPI (Gestionnaire Libre de Parc Informatique) sous Linux CentOS. Le système permet de gérer les incidents, les demandes et l'inventaire du matériel.</p>
+                    <p>Implémentation d'une solution complète de ticketing et de gestion de parc informatique basée sur GLPI.</p>
                     
                     <div class="modal-features">
                         <h4>Fonctionnalités implémentées</h4>
@@ -2273,58 +2345,6 @@ document.querySelectorAll('.scroll-to-projects').forEach(button => {
                         <span class="modal-tech-tag">MySQL</span>
                         <span class="modal-tech-tag">Apache</span>
                         <span class="modal-tech-tag">PHP</span>
-                    </div>
-                    
-                    <div class="modal-links">
-                        <a href="#" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Voir la documentation
-                        </a>
-                        <a href="#" target="_blank">
-                            <i class="fab fa-github"></i> Voir les scripts
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modale Projet 3 (E5: Analyse et résolution d'incidents réseau) -->
-    <div class="project-modal" id="project-modal-3">
-        <div class="modal-content">
-            <button class="close-modal">×</button>
-            <div class="modal-header">
-                <h2>Analyse et résolution d'incidents réseau</h2>
-                <div class="project-meta">
-                    <span><i class="far fa-calendar-alt"></i> 2024</span>
-                    <span><i class="fas fa-tag"></i> Gestion des incidents</span>
-                </div>
-            </div>
-            <div class="modal-body">
-                <div class="modal-images">
-                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Capture d'écran du projet">
-                    <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Détails techniques">
-                </div>
-                <div class="modal-details">
-                    <h3>Description du projet</h3>
-                    <p>Ce projet visait à établir une méthodologie efficace pour l’analyse et la résolution d’incidents réseau, en migrant les outils de ticketing de GLPI vers FreshService. L’objectif était d’améliorer le suivi, la priorisation et la résolution des incidents tout en optimisant l’expérience utilisateur.</p>
-                    
-                    <div class="modal-features">
-                        <h4>Fonctionnalités implémentées</h4>
-                        <ul>
-                            <li>Analyse des incidents réseau avec outils de monitoring</li>
-                            <li>Migration des données de GLPI vers FreshService</li>
-                            <li>Configuration de workflows automatisés dans FreshService</li>
-                            <li>Formation des équipes sur l’utilisation de FreshService</li>
-                            <li>Mise en place de rapports personnalisés</li>
-                            <li>Intégration avec des outils de diagnostic réseau</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="modal-technologies">
-                        <span class="modal-tech-tag">GLPI</span>
-                        <span class="modal-tech-tag">FreshService</span>
-                        <span class="modal-tech-tag">Réseau</span>
-                        <span class="modal-tech-tag">Monitoring</span>
                     </div>
                     
                     <div class="modal-links">
@@ -2396,9 +2416,7 @@ document.querySelectorAll('.scroll-to-projects').forEach(button => {
         <i class="fab fa-github"></i> Code source
     </a>
 </div>
-Ajoutez ces modales à la fin de votre HTML (avec les autres modales) :
-
-html
+                
 <!-- Modale Projet 5 (E5: Gestion Active Directory) -->
 <div class="project-modal" id="project-modal-5">
     <div class="modal-content">
