@@ -1750,12 +1750,11 @@
     
 <!-- Scripts JS -->
 <script>
-    // Ajoutez ce code à votre fichier JavaScript
-const logo = document.querySelector('.logo');
+   const darkModeToggle = document.querySelector('#dark-mode-toggle');
 let clickCount = 0;
 let clickTimer;
 
-logo.addEventListener('click', (e) => {
+darkModeToggle.addEventListener('click', (e) => {
     e.preventDefault();
     clickCount++;
     
