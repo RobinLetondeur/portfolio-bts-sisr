@@ -1750,11 +1750,11 @@
     
 <!-- Scripts JS -->
 <script>
-   const darkModeToggle = document.querySelector('#dark-mode-toggle');
+ const homeButton = document.querySelector('.active');
 let clickCount = 0;
 let clickTimer;
 
-darkModeToggle.addEventListener('click', (e) => {
+homeButton.addEventListener('click', (e) => {
     e.preventDefault();
     clickCount++;
     
@@ -1983,6 +1983,7 @@ function launchPacman() {
     
     gameLoop();
 }
+
     // Fonctionnalité des boutons "Voir le projet"
     document.addEventListener('DOMContentLoaded', function() {
         // Sélectionner tous les boutons "Voir le projet"
